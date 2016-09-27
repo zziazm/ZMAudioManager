@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A3FF1121EFE1B7DD0896827B370845757DAC906F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D1145A0F1FA5B2185516C09CF161F7F2FD20A617" : 0,
+    "A3FF1121EFE1B7DD0896827B370845757DAC906F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FFFD6017-3252-4433-AA5A-AABB85F072FA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D1145A0F1FA5B2185516C09CF161F7F2FD20A617" : "",
+    "A3FF1121EFE1B7DD0896827B370845757DAC906F" : "RecordAudio\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RecordAudio",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RecordAudio.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zziazm\/RecordAudio.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A3FF1121EFE1B7DD0896827B370845757DAC906F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zziazm\/iOS--audio.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D1145A0F1FA5B2185516C09CF161F7F2FD20A617"
+    }
+  ]
+}

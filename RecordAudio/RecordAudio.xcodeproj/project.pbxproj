@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5DEF03B61D73ED800007C8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03B51D73ED800007C8FD /* main.m */; };
+		5DEF03B91D73ED800007C8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03B81D73ED800007C8FD /* AppDelegate.m */; };
+		5DEF03BC1D73ED800007C8FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03BB1D73ED800007C8FD /* ViewController.m */; };
+		5DEF03C11D73ED800007C8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF03C01D73ED800007C8FD /* Assets.xcassets */; };
+		5DEF03C41D73ED800007C8FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF03C21D73ED800007C8FD /* LaunchScreen.storyboard */; };
+		5DEF03CF1D73ED800007C8FD /* RecordAudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03CE1D73ED800007C8FD /* RecordAudioTests.m */; };
+		5DEF03DA1D73ED800007C8FD /* RecordAudioUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03D91D73ED800007C8FD /* RecordAudioUITests.m */; };
+		5DEF03EE1D7471230007C8FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF03ED1D7471230007C8FD /* Main.storyboard */; };
+		5DEF03F71D74739D0007C8FD /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03F51D74739D0007C8FD /* CustomCell.m */; };
+		5DEF03F81D74739D0007C8FD /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF03F61D74739D0007C8FD /* CustomCell.xib */; };
+		5DEF03FB1D7475B20007C8FD /* CustomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03FA1D7475B20007C8FD /* CustomCellModel.m */; };
+		5DEF03FD1D74770C0007C8FD /* p-3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF03FC1D74770C0007C8FD /* p-3@2x.png */; };
+		5DEF03FF1D74772B0007C8FD /* p-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF03FE1D74772B0007C8FD /* p-2@2x.png */; };
+		5DEF04011D74773B0007C8FD /* p-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF04001D74773B0007C8FD /* p-1@2x.png */; };
+		5DFCC0161D756CD7000B113F /* VoiceSearchFeedback001.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFEE1D756CD7000B113F /* VoiceSearchFeedback001.png */; };
+		5DFCC0171D756CD7000B113F /* VoiceSearchFeedback001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFEF1D756CD7000B113F /* VoiceSearchFeedback001@2x.png */; };
+		5DFCC0181D756CD7000B113F /* VoiceSearchFeedback002.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF01D756CD7000B113F /* VoiceSearchFeedback002.png */; };
+		5DFCC0191D756CD7000B113F /* VoiceSearchFeedback002@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF11D756CD7000B113F /* VoiceSearchFeedback002@2x.png */; };
+		5DFCC01A1D756CD7000B113F /* VoiceSearchFeedback003.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF21D756CD7000B113F /* VoiceSearchFeedback003.png */; };
+		5DFCC01B1D756CD7000B113F /* VoiceSearchFeedback003@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF31D756CD7000B113F /* VoiceSearchFeedback003@2x.png */; };
+		5DFCC01C1D756CD7000B113F /* VoiceSearchFeedback004.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF41D756CD7000B113F /* VoiceSearchFeedback004.png */; };
+		5DFCC01D1D756CD7000B113F /* VoiceSearchFeedback004@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF51D756CD7000B113F /* VoiceSearchFeedback004@2x.png */; };
+		5DFCC01E1D756CD7000B113F /* VoiceSearchFeedback005.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF61D756CD7000B113F /* VoiceSearchFeedback005.png */; };
+		5DFCC01F1D756CD7000B113F /* VoiceSearchFeedback005@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF71D756CD7000B113F /* VoiceSearchFeedback005@2x.png */; };
+		5DFCC0201D756CD7000B113F /* VoiceSearchFeedback006.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF81D756CD7000B113F /* VoiceSearchFeedback006.png */; };
+		5DFCC0211D756CD7000B113F /* VoiceSearchFeedback006@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFF91D756CD7000B113F /* VoiceSearchFeedback006@2x.png */; };
+		5DFCC0221D756CD7000B113F /* VoiceSearchFeedback007.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFFA1D756CD7000B113F /* VoiceSearchFeedback007.png */; };
+		5DFCC0231D756CD7000B113F /* VoiceSearchFeedback007@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFFB1D756CD7000B113F /* VoiceSearchFeedback007@2x.png */; };
+		5DFCC0241D756CD7000B113F /* VoiceSearchFeedback008.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFFC1D756CD7000B113F /* VoiceSearchFeedback008.png */; };
+		5DFCC0251D756CD7000B113F /* VoiceSearchFeedback008@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFFD1D756CD7000B113F /* VoiceSearchFeedback008@2x.png */; };
+		5DFCC0261D756CD7000B113F /* VoiceSearchFeedback009.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFFE1D756CD7000B113F /* VoiceSearchFeedback009.png */; };
+		5DFCC0271D756CD7000B113F /* VoiceSearchFeedback009@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCBFFF1D756CD7000B113F /* VoiceSearchFeedback009@2x.png */; };
+		5DFCC0281D756CD7000B113F /* VoiceSearchFeedback010.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0001D756CD7000B113F /* VoiceSearchFeedback010.png */; };
+		5DFCC0291D756CD7000B113F /* VoiceSearchFeedback010@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0011D756CD7000B113F /* VoiceSearchFeedback010@2x.png */; };
+		5DFCC02A1D756CD7000B113F /* VoiceSearchFeedback011.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0021D756CD7000B113F /* VoiceSearchFeedback011.png */; };
+		5DFCC02B1D756CD7000B113F /* VoiceSearchFeedback011@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0031D756CD7000B113F /* VoiceSearchFeedback011@2x.png */; };
+		5DFCC02C1D756CD7000B113F /* VoiceSearchFeedback012.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0041D756CD7000B113F /* VoiceSearchFeedback012.png */; };
+		5DFCC02D1D756CD7000B113F /* VoiceSearchFeedback012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0051D756CD7000B113F /* VoiceSearchFeedback012@2x.png */; };
+		5DFCC02E1D756CD7000B113F /* VoiceSearchFeedback013.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0061D756CD7000B113F /* VoiceSearchFeedback013.png */; };
+		5DFCC02F1D756CD7000B113F /* VoiceSearchFeedback013@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0071D756CD7000B113F /* VoiceSearchFeedback013@2x.png */; };
+		5DFCC0301D756CD7000B113F /* VoiceSearchFeedback014.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0081D756CD7000B113F /* VoiceSearchFeedback014.png */; };
+		5DFCC0311D756CD7000B113F /* VoiceSearchFeedback014@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0091D756CD7000B113F /* VoiceSearchFeedback014@2x.png */; };
+		5DFCC0321D756CD7000B113F /* VoiceSearchFeedback015.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC00A1D756CD7000B113F /* VoiceSearchFeedback015.png */; };
+		5DFCC0331D756CD7000B113F /* VoiceSearchFeedback015@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC00B1D756CD7000B113F /* VoiceSearchFeedback015@2x.png */; };
+		5DFCC0341D756CD7000B113F /* VoiceSearchFeedback016.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC00C1D756CD7000B113F /* VoiceSearchFeedback016.png */; };
+		5DFCC0351D756CD7000B113F /* VoiceSearchFeedback016@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC00D1D756CD7000B113F /* VoiceSearchFeedback016@2x.png */; };
+		5DFCC0361D756CD7000B113F /* VoiceSearchFeedback017.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC00E1D756CD7000B113F /* VoiceSearchFeedback017.png */; };
+		5DFCC0371D756CD7000B113F /* VoiceSearchFeedback017@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC00F1D756CD7000B113F /* VoiceSearchFeedback017@2x.png */; };
+		5DFCC0381D756CD7000B113F /* VoiceSearchFeedback018.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0101D756CD7000B113F /* VoiceSearchFeedback018.png */; };
+		5DFCC0391D756CD7000B113F /* VoiceSearchFeedback018@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0111D756CD7000B113F /* VoiceSearchFeedback018@2x.png */; };
+		5DFCC03A1D756CD7000B113F /* VoiceSearchFeedback019.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0121D756CD7000B113F /* VoiceSearchFeedback019.png */; };
+		5DFCC03B1D756CD7000B113F /* VoiceSearchFeedback019@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0131D756CD7000B113F /* VoiceSearchFeedback019@2x.png */; };
+		5DFCC03C1D756CD7000B113F /* VoiceSearchFeedback020.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0141D756CD7000B113F /* VoiceSearchFeedback020.png */; };
+		5DFCC03D1D756CD7000B113F /* VoiceSearchFeedback020@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0151D756CD7000B113F /* VoiceSearchFeedback020@2x.png */; };
+		5DFF33D21D90107100F9DCBC /* tViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF33D11D90107100F9DCBC /* tViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DEF03CB1D73ED800007C8FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DEF03A91D73ED800007C8FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DEF03B01D73ED800007C8FD;
+			remoteInfo = RecordAudio;
+		};
+		5DEF03D61D73ED800007C8FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DEF03A91D73ED800007C8FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DEF03B01D73ED800007C8FD;
+			remoteInfo = RecordAudio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5DEF03B11D73ED800007C8FD /* RecordAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DEF03B51D73ED800007C8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5DEF03B71D73ED800007C8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5DEF03B81D73ED800007C8FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5DEF03BA1D73ED800007C8FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5DEF03BB1D73ED800007C8FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5DEF03C01D73ED800007C8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DEF03C31D73ED800007C8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5DEF03C51D73ED800007C8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DEF03CA1D73ED800007C8FD /* RecordAudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordAudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DEF03CE1D73ED800007C8FD /* RecordAudioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordAudioTests.m; sourceTree = "<group>"; };
+		5DEF03D01D73ED800007C8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DEF03D51D73ED800007C8FD /* RecordAudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordAudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DEF03D91D73ED800007C8FD /* RecordAudioUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordAudioUITests.m; sourceTree = "<group>"; };
+		5DEF03DB1D73ED800007C8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DEF03ED1D7471230007C8FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5DEF03F41D74739D0007C8FD /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		5DEF03F51D74739D0007C8FD /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		5DEF03F61D74739D0007C8FD /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		5DEF03F91D7475B20007C8FD /* CustomCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellModel.h; sourceTree = "<group>"; };
+		5DEF03FA1D7475B20007C8FD /* CustomCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellModel.m; sourceTree = "<group>"; };
+		5DEF03FC1D74770C0007C8FD /* p-3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p-3@2x.png"; sourceTree = "<group>"; };
+		5DEF03FE1D74772B0007C8FD /* p-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p-2@2x.png"; sourceTree = "<group>"; };
+		5DEF04001D74773B0007C8FD /* p-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p-1@2x.png"; sourceTree = "<group>"; };
+		5DFCBFEE1D756CD7000B113F /* VoiceSearchFeedback001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback001.png; sourceTree = "<group>"; };
+		5DFCBFEF1D756CD7000B113F /* VoiceSearchFeedback001@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback001@2x.png"; sourceTree = "<group>"; };
+		5DFCBFF01D756CD7000B113F /* VoiceSearchFeedback002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback002.png; sourceTree = "<group>"; };
+		5DFCBFF11D756CD7000B113F /* VoiceSearchFeedback002@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback002@2x.png"; sourceTree = "<group>"; };
+		5DFCBFF21D756CD7000B113F /* VoiceSearchFeedback003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback003.png; sourceTree = "<group>"; };
+		5DFCBFF31D756CD7000B113F /* VoiceSearchFeedback003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback003@2x.png"; sourceTree = "<group>"; };
+		5DFCBFF41D756CD7000B113F /* VoiceSearchFeedback004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback004.png; sourceTree = "<group>"; };
+		5DFCBFF51D756CD7000B113F /* VoiceSearchFeedback004@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback004@2x.png"; sourceTree = "<group>"; };
+		5DFCBFF61D756CD7000B113F /* VoiceSearchFeedback005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback005.png; sourceTree = "<group>"; };
+		5DFCBFF71D756CD7000B113F /* VoiceSearchFeedback005@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback005@2x.png"; sourceTree = "<group>"; };
+		5DFCBFF81D756CD7000B113F /* VoiceSearchFeedback006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback006.png; sourceTree = "<group>"; };
+		5DFCBFF91D756CD7000B113F /* VoiceSearchFeedback006@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback006@2x.png"; sourceTree = "<group>"; };
+		5DFCBFFA1D756CD7000B113F /* VoiceSearchFeedback007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback007.png; sourceTree = "<group>"; };
+		5DFCBFFB1D756CD7000B113F /* VoiceSearchFeedback007@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback007@2x.png"; sourceTree = "<group>"; };
+		5DFCBFFC1D756CD7000B113F /* VoiceSearchFeedback008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback008.png; sourceTree = "<group>"; };
+		5DFCBFFD1D756CD7000B113F /* VoiceSearchFeedback008@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback008@2x.png"; sourceTree = "<group>"; };
+		5DFCBFFE1D756CD7000B113F /* VoiceSearchFeedback009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback009.png; sourceTree = "<group>"; };
+		5DFCBFFF1D756CD7000B113F /* VoiceSearchFeedback009@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback009@2x.png"; sourceTree = "<group>"; };
+		5DFCC0001D756CD7000B113F /* VoiceSearchFeedback010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback010.png; sourceTree = "<group>"; };
+		5DFCC0011D756CD7000B113F /* VoiceSearchFeedback010@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback010@2x.png"; sourceTree = "<group>"; };
+		5DFCC0021D756CD7000B113F /* VoiceSearchFeedback011.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback011.png; sourceTree = "<group>"; };
+		5DFCC0031D756CD7000B113F /* VoiceSearchFeedback011@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback011@2x.png"; sourceTree = "<group>"; };
+		5DFCC0041D756CD7000B113F /* VoiceSearchFeedback012.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback012.png; sourceTree = "<group>"; };
+		5DFCC0051D756CD7000B113F /* VoiceSearchFeedback012@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback012@2x.png"; sourceTree = "<group>"; };
+		5DFCC0061D756CD7000B113F /* VoiceSearchFeedback013.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback013.png; sourceTree = "<group>"; };
+		5DFCC0071D756CD7000B113F /* VoiceSearchFeedback013@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback013@2x.png"; sourceTree = "<group>"; };
+		5DFCC0081D756CD7000B113F /* VoiceSearchFeedback014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback014.png; sourceTree = "<group>"; };
+		5DFCC0091D756CD7000B113F /* VoiceSearchFeedback014@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback014@2x.png"; sourceTree = "<group>"; };
+		5DFCC00A1D756CD7000B113F /* VoiceSearchFeedback015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback015.png; sourceTree = "<group>"; };
+		5DFCC00B1D756CD7000B113F /* VoiceSearchFeedback015@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback015@2x.png"; sourceTree = "<group>"; };
+		5DFCC00C1D756CD7000B113F /* VoiceSearchFeedback016.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback016.png; sourceTree = "<group>"; };
+		5DFCC00D1D756CD7000B113F /* VoiceSearchFeedback016@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback016@2x.png"; sourceTree = "<group>"; };
+		5DFCC00E1D756CD7000B113F /* VoiceSearchFeedback017.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback017.png; sourceTree = "<group>"; };
+		5DFCC00F1D756CD7000B113F /* VoiceSearchFeedback017@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback017@2x.png"; sourceTree = "<group>"; };
+		5DFCC0101D756CD7000B113F /* VoiceSearchFeedback018.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback018.png; sourceTree = "<group>"; };
+		5DFCC0111D756CD7000B113F /* VoiceSearchFeedback018@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback018@2x.png"; sourceTree = "<group>"; };
+		5DFCC0121D756CD7000B113F /* VoiceSearchFeedback019.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback019.png; sourceTree = "<group>"; };
+		5DFCC0131D756CD7000B113F /* VoiceSearchFeedback019@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback019@2x.png"; sourceTree = "<group>"; };
+		5DFCC0141D756CD7000B113F /* VoiceSearchFeedback020.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback020.png; sourceTree = "<group>"; };
+		5DFCC0151D756CD7000B113F /* VoiceSearchFeedback020@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback020@2x.png"; sourceTree = "<group>"; };
+		5DFF33D01D90107100F9DCBC /* tViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tViewController.h; sourceTree = "<group>"; };
+		5DFF33D11D90107100F9DCBC /* tViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DEF03AE1D73ED800007C8FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF03C71D73ED800007C8FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF03D21D73ED800007C8FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D07BE0D1D781AE800AECB58 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				5DEF03FC1D74770C0007C8FD /* p-3@2x.png */,
+				5DEF03FE1D74772B0007C8FD /* p-2@2x.png */,
+				5DEF04001D74773B0007C8FD /* p-1@2x.png */,
+				5DFCBFEE1D756CD7000B113F /* VoiceSearchFeedback001.png */,
+				5DFCBFEF1D756CD7000B113F /* VoiceSearchFeedback001@2x.png */,
+				5DFCBFF01D756CD7000B113F /* VoiceSearchFeedback002.png */,
+				5DFCBFF11D756CD7000B113F /* VoiceSearchFeedback002@2x.png */,
+				5DFCBFF21D756CD7000B113F /* VoiceSearchFeedback003.png */,
+				5DFCBFF31D756CD7000B113F /* VoiceSearchFeedback003@2x.png */,
+				5DFCBFF41D756CD7000B113F /* VoiceSearchFeedback004.png */,
+				5DFCBFF51D756CD7000B113F /* VoiceSearchFeedback004@2x.png */,
+				5DFCBFF61D756CD7000B113F /* VoiceSearchFeedback005.png */,
+				5DFCBFF71D756CD7000B113F /* VoiceSearchFeedback005@2x.png */,
+				5DFCBFF81D756CD7000B113F /* VoiceSearchFeedback006.png */,
+				5DFCBFF91D756CD7000B113F /* VoiceSearchFeedback006@2x.png */,
+				5DFCBFFA1D756CD7000B113F /* VoiceSearchFeedback007.png */,
+				5DFCBFFB1D756CD7000B113F /* VoiceSearchFeedback007@2x.png */,
+				5DFCBFFC1D756CD7000B113F /* VoiceSearchFeedback008.png */,
+				5DFCBFFD1D756CD7000B113F /* VoiceSearchFeedback008@2x.png */,
+				5DFCBFFE1D756CD7000B113F /* VoiceSearchFeedback009.png */,
+				5DFCBFFF1D756CD7000B113F /* VoiceSearchFeedback009@2x.png */,
+				5DFCC0001D756CD7000B113F /* VoiceSearchFeedback010.png */,
+				5DFCC0011D756CD7000B113F /* VoiceSearchFeedback010@2x.png */,
+				5DFCC0021D756CD7000B113F /* VoiceSearchFeedback011.png */,
+				5DFCC0031D756CD7000B113F /* VoiceSearchFeedback011@2x.png */,
+				5DFCC0041D756CD7000B113F /* VoiceSearchFeedback012.png */,
+				5DFCC0051D756CD7000B113F /* VoiceSearchFeedback012@2x.png */,
+				5DFCC0061D756CD7000B113F /* VoiceSearchFeedback013.png */,
+				5DFCC0071D756CD7000B113F /* VoiceSearchFeedback013@2x.png */,
+				5DFCC0081D756CD7000B113F /* VoiceSearchFeedback014.png */,
+				5DFCC0091D756CD7000B113F /* VoiceSearchFeedback014@2x.png */,
+				5DFCC00A1D756CD7000B113F /* VoiceSearchFeedback015.png */,
+				5DFCC00B1D756CD7000B113F /* VoiceSearchFeedback015@2x.png */,
+				5DFCC00C1D756CD7000B113F /* VoiceSearchFeedback016.png */,
+				5DFCC00D1D756CD7000B113F /* VoiceSearchFeedback016@2x.png */,
+				5DFCC00E1D756CD7000B113F /* VoiceSearchFeedback017.png */,
+				5DFCC00F1D756CD7000B113F /* VoiceSearchFeedback017@2x.png */,
+				5DFCC0101D756CD7000B113F /* VoiceSearchFeedback018.png */,
+				5DFCC0111D756CD7000B113F /* VoiceSearchFeedback018@2x.png */,
+				5DFCC0121D756CD7000B113F /* VoiceSearchFeedback019.png */,
+				5DFCC0131D756CD7000B113F /* VoiceSearchFeedback019@2x.png */,
+				5DFCC0141D756CD7000B113F /* VoiceSearchFeedback020.png */,
+				5DFCC0151D756CD7000B113F /* VoiceSearchFeedback020@2x.png */,
+				5DFF33D01D90107100F9DCBC /* tViewController.h */,
+				5DFF33D11D90107100F9DCBC /* tViewController.m */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		5DEF03A81D73ED800007C8FD = {
+			isa = PBXGroup;
+			children = (
+				5DEF03B31D73ED800007C8FD /* RecordAudio */,
+				5DEF03CD1D73ED800007C8FD /* RecordAudioTests */,
+				5DEF03D81D73ED800007C8FD /* RecordAudioUITests */,
+				5DEF03B21D73ED800007C8FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DEF03B21D73ED800007C8FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DEF03B11D73ED800007C8FD /* RecordAudio.app */,
+				5DEF03CA1D73ED800007C8FD /* RecordAudioTests.xctest */,
+				5DEF03D51D73ED800007C8FD /* RecordAudioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DEF03B31D73ED800007C8FD /* RecordAudio */ = {
+			isa = PBXGroup;
+			children = (
+				5D07BE0D1D781AE800AECB58 /* image */,
+				5DEF03B71D73ED800007C8FD /* AppDelegate.h */,
+				5DEF03B81D73ED800007C8FD /* AppDelegate.m */,
+				5DEF03BA1D73ED800007C8FD /* ViewController.h */,
+				5DEF03BB1D73ED800007C8FD /* ViewController.m */,
+				5DEF03ED1D7471230007C8FD /* Main.storyboard */,
+				5DEF03C01D73ED800007C8FD /* Assets.xcassets */,
+				5DEF03C21D73ED800007C8FD /* LaunchScreen.storyboard */,
+				5DEF03C51D73ED800007C8FD /* Info.plist */,
+				5DEF03B41D73ED800007C8FD /* Supporting Files */,
+				5DEF03F41D74739D0007C8FD /* CustomCell.h */,
+				5DEF03F51D74739D0007C8FD /* CustomCell.m */,
+				5DEF03F61D74739D0007C8FD /* CustomCell.xib */,
+				5DEF03F91D7475B20007C8FD /* CustomCellModel.h */,
+				5DEF03FA1D7475B20007C8FD /* CustomCellModel.m */,
+			);
+			path = RecordAudio;
+			sourceTree = "<group>";
+		};
+		5DEF03B41D73ED800007C8FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DEF03B51D73ED800007C8FD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DEF03CD1D73ED800007C8FD /* RecordAudioTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DEF03CE1D73ED800007C8FD /* RecordAudioTests.m */,
+				5DEF03D01D73ED800007C8FD /* Info.plist */,
+			);
+			path = RecordAudioTests;
+			sourceTree = "<group>";
+		};
+		5DEF03D81D73ED800007C8FD /* RecordAudioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5DEF03D91D73ED800007C8FD /* RecordAudioUITests.m */,
+				5DEF03DB1D73ED800007C8FD /* Info.plist */,
+			);
+			path = RecordAudioUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DEF03B01D73ED800007C8FD /* RecordAudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DEF03DE1D73ED800007C8FD /* Build configuration list for PBXNativeTarget "RecordAudio" */;
+			buildPhases = (
+				5DEF03AD1D73ED800007C8FD /* Sources */,
+				5DEF03AE1D73ED800007C8FD /* Frameworks */,
+				5DEF03AF1D73ED800007C8FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecordAudio;
+			productName = RecordAudio;
+			productReference = 5DEF03B11D73ED800007C8FD /* RecordAudio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5DEF03C91D73ED800007C8FD /* RecordAudioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DEF03E11D73ED800007C8FD /* Build configuration list for PBXNativeTarget "RecordAudioTests" */;
+			buildPhases = (
+				5DEF03C61D73ED800007C8FD /* Sources */,
+				5DEF03C71D73ED800007C8FD /* Frameworks */,
+				5DEF03C81D73ED800007C8FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DEF03CC1D73ED800007C8FD /* PBXTargetDependency */,
+			);
+			name = RecordAudioTests;
+			productName = RecordAudioTests;
+			productReference = 5DEF03CA1D73ED800007C8FD /* RecordAudioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5DEF03D41D73ED800007C8FD /* RecordAudioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DEF03E41D73ED800007C8FD /* Build configuration list for PBXNativeTarget "RecordAudioUITests" */;
+			buildPhases = (
+				5DEF03D11D73ED800007C8FD /* Sources */,
+				5DEF03D21D73ED800007C8FD /* Frameworks */,
+				5DEF03D31D73ED800007C8FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DEF03D71D73ED800007C8FD /* PBXTargetDependency */,
+			);
+			name = RecordAudioUITests;
+			productName = RecordAudioUITests;
+			productReference = 5DEF03D51D73ED800007C8FD /* RecordAudioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DEF03A91D73ED800007C8FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = zziazm;
+				TargetAttributes = {
+					5DEF03B01D73ED800007C8FD = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4QQ73282F5;
+					};
+					5DEF03C91D73ED800007C8FD = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4QQ73282F5;
+						TestTargetID = 5DEF03B01D73ED800007C8FD;
+					};
+					5DEF03D41D73ED800007C8FD = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4QQ73282F5;
+						TestTargetID = 5DEF03B01D73ED800007C8FD;
+					};
+				};
+			};
+			buildConfigurationList = 5DEF03AC1D73ED800007C8FD /* Build configuration list for PBXProject "RecordAudio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DEF03A81D73ED800007C8FD;
+			productRefGroup = 5DEF03B21D73ED800007C8FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DEF03B01D73ED800007C8FD /* RecordAudio */,
+				5DEF03C91D73ED800007C8FD /* RecordAudioTests */,
+				5DEF03D41D73ED800007C8FD /* RecordAudioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DEF03AF1D73ED800007C8FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DFCC0311D756CD7000B113F /* VoiceSearchFeedback014@2x.png in Resources */,
+				5DFCC0181D756CD7000B113F /* VoiceSearchFeedback002.png in Resources */,
+				5DFCC0301D756CD7000B113F /* VoiceSearchFeedback014.png in Resources */,
+				5DFCC01A1D756CD7000B113F /* VoiceSearchFeedback003.png in Resources */,
+				5DFCC03B1D756CD7000B113F /* VoiceSearchFeedback019@2x.png in Resources */,
+				5DFCC03D1D756CD7000B113F /* VoiceSearchFeedback020@2x.png in Resources */,
+				5DFCC03A1D756CD7000B113F /* VoiceSearchFeedback019.png in Resources */,
+				5DEF04011D74773B0007C8FD /* p-1@2x.png in Resources */,
+				5DFCC01E1D756CD7000B113F /* VoiceSearchFeedback005.png in Resources */,
+				5DFCC0361D756CD7000B113F /* VoiceSearchFeedback017.png in Resources */,
+				5DFCC0371D756CD7000B113F /* VoiceSearchFeedback017@2x.png in Resources */,
+				5DFCC0331D756CD7000B113F /* VoiceSearchFeedback015@2x.png in Resources */,
+				5DFCC0341D756CD7000B113F /* VoiceSearchFeedback016.png in Resources */,
+				5DFCC03C1D756CD7000B113F /* VoiceSearchFeedback020.png in Resources */,
+				5DFCC02A1D756CD7000B113F /* VoiceSearchFeedback011.png in Resources */,
+				5DFCC0381D756CD7000B113F /* VoiceSearchFeedback018.png in Resources */,
+				5DFCC0231D756CD7000B113F /* VoiceSearchFeedback007@2x.png in Resources */,
+				5DFCC0201D756CD7000B113F /* VoiceSearchFeedback006.png in Resources */,
+				5DFCC0391D756CD7000B113F /* VoiceSearchFeedback018@2x.png in Resources */,
+				5DFCC0241D756CD7000B113F /* VoiceSearchFeedback008.png in Resources */,
+				5DFCC02F1D756CD7000B113F /* VoiceSearchFeedback013@2x.png in Resources */,
+				5DFCC0261D756CD7000B113F /* VoiceSearchFeedback009.png in Resources */,
+				5DFCC0221D756CD7000B113F /* VoiceSearchFeedback007.png in Resources */,
+				5DFCC02D1D756CD7000B113F /* VoiceSearchFeedback012@2x.png in Resources */,
+				5DFCC0351D756CD7000B113F /* VoiceSearchFeedback016@2x.png in Resources */,
+				5DFCC0291D756CD7000B113F /* VoiceSearchFeedback010@2x.png in Resources */,
+				5DFCC02C1D756CD7000B113F /* VoiceSearchFeedback012.png in Resources */,
+				5DEF03C41D73ED800007C8FD /* LaunchScreen.storyboard in Resources */,
+				5DFCC0171D756CD7000B113F /* VoiceSearchFeedback001@2x.png in Resources */,
+				5DFCC01D1D756CD7000B113F /* VoiceSearchFeedback004@2x.png in Resources */,
+				5DFCC01B1D756CD7000B113F /* VoiceSearchFeedback003@2x.png in Resources */,
+				5DFCC0321D756CD7000B113F /* VoiceSearchFeedback015.png in Resources */,
+				5DFCC01C1D756CD7000B113F /* VoiceSearchFeedback004.png in Resources */,
+				5DFCC02E1D756CD7000B113F /* VoiceSearchFeedback013.png in Resources */,
+				5DEF03C11D73ED800007C8FD /* Assets.xcassets in Resources */,
+				5DFCC0281D756CD7000B113F /* VoiceSearchFeedback010.png in Resources */,
+				5DFCC0211D756CD7000B113F /* VoiceSearchFeedback006@2x.png in Resources */,
+				5DFCC0251D756CD7000B113F /* VoiceSearchFeedback008@2x.png in Resources */,
+				5DFCC01F1D756CD7000B113F /* VoiceSearchFeedback005@2x.png in Resources */,
+				5DFCC0271D756CD7000B113F /* VoiceSearchFeedback009@2x.png in Resources */,
+				5DEF03FF1D74772B0007C8FD /* p-2@2x.png in Resources */,
+				5DEF03FD1D74770C0007C8FD /* p-3@2x.png in Resources */,
+				5DFCC0191D756CD7000B113F /* VoiceSearchFeedback002@2x.png in Resources */,
+				5DEF03F81D74739D0007C8FD /* CustomCell.xib in Resources */,
+				5DFCC02B1D756CD7000B113F /* VoiceSearchFeedback011@2x.png in Resources */,
+				5DEF03EE1D7471230007C8FD /* Main.storyboard in Resources */,
+				5DFCC0161D756CD7000B113F /* VoiceSearchFeedback001.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF03C81D73ED800007C8FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF03D31D73ED800007C8FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DEF03AD1D73ED800007C8FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DEF03FB1D7475B20007C8FD /* CustomCellModel.m in Sources */,
+				5DFF33D21D90107100F9DCBC /* tViewController.m in Sources */,
+				5DEF03BC1D73ED800007C8FD /* ViewController.m in Sources */,
+				5DEF03B91D73ED800007C8FD /* AppDelegate.m in Sources */,
+				5DEF03F71D74739D0007C8FD /* CustomCell.m in Sources */,
+				5DEF03B61D73ED800007C8FD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF03C61D73ED800007C8FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DEF03CF1D73ED800007C8FD /* RecordAudioTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEF03D11D73ED800007C8FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DEF03DA1D73ED800007C8FD /* RecordAudioUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DEF03CC1D73ED800007C8FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DEF03B01D73ED800007C8FD /* RecordAudio */;
+			targetProxy = 5DEF03CB1D73ED800007C8FD /* PBXContainerItemProxy */;
+		};
+		5DEF03D71D73ED800007C8FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DEF03B01D73ED800007C8FD /* RecordAudio */;
+			targetProxy = 5DEF03D61D73ED800007C8FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5DEF03C21D73ED800007C8FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DEF03C31D73ED800007C8FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DEF03DC1D73ED800007C8FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5DEF03DD1D73ED800007C8FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DEF03DF1D73ED800007C8FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = RecordAudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzia.RecordAudio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5DEF03E01D73ED800007C8FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = RecordAudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzia.RecordAudio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5DEF03E21D73ED800007C8FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RecordAudioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzia.RecordAudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecordAudio.app/RecordAudio";
+			};
+			name = Debug;
+		};
+		5DEF03E31D73ED800007C8FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RecordAudioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzia.RecordAudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecordAudio.app/RecordAudio";
+			};
+			name = Release;
+		};
+		5DEF03E51D73ED800007C8FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RecordAudioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzia.RecordAudioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RecordAudio;
+			};
+			name = Debug;
+		};
+		5DEF03E61D73ED800007C8FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RecordAudioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzia.RecordAudioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RecordAudio;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DEF03AC1D73ED800007C8FD /* Build configuration list for PBXProject "RecordAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DEF03DC1D73ED800007C8FD /* Debug */,
+				5DEF03DD1D73ED800007C8FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DEF03DE1D73ED800007C8FD /* Build configuration list for PBXNativeTarget "RecordAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DEF03DF1D73ED800007C8FD /* Debug */,
+				5DEF03E01D73ED800007C8FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DEF03E11D73ED800007C8FD /* Build configuration list for PBXNativeTarget "RecordAudioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DEF03E21D73ED800007C8FD /* Debug */,
+				5DEF03E31D73ED800007C8FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DEF03E41D73ED800007C8FD /* Build configuration list for PBXNativeTarget "RecordAudioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DEF03E51D73ED800007C8FD /* Debug */,
+				5DEF03E61D73ED800007C8FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5DEF03A91D73ED800007C8FD /* Project object */;
+}
