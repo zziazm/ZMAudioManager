@@ -14,7 +14,8 @@
 @property (nonatomic, strong) AVAudioRecorder * audioRecorder;
 @property (nonatomic, strong) AVAudioPlayer * audioPlayer;
 @property (nonatomic, strong) AVAudioSession * audioSession;
-@property (weak, nonatomic) IBOutlet UITableView *tableview;
+//@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic)  UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray * datasource;
 @property (nonatomic, strong) CustomCellModel * previousSelectedModel;
 @property (nonatomic, strong) NSTimer * metesTimer;
@@ -26,6 +27,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor  = [UIColor whiteColor];
+    _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 44) style:UITableViewStylePlain];
+    [self.view addSubview:_tableview];
+    _tableview.delegate = self;
+    _tableview .dataSource = self;
+    
+    UIToolbar * toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 44, [UIScreen mainScreen].bounds.size.width, 44)];
+    [self.view addSubview:toolbar];
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = CGRectMake(0, 0, 100, 30);
+    button.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, 22);
+    [button setTitle:@"开始录音" forState:UIControlStateNormal];
+    [toolbar addSubview:button];
+    [button addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(touchUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
+    [button addTarget:self action:@selector(touchDragEnter:) forControlEvents:UIControlEventTouchDragEnter];
+    [button addTarget:self action:@selector(touchDragExit:) forControlEvents:UIControlEventTouchDragExit];
+    [button addTarget:self action:@selector(touchDragInside:) forControlEvents:UIControlEventTouchDragInside];
+    [button addTarget:self action:@selector(touchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
+    
     _recoredAnimationView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     _recoredAnimationView.center = self.view.center;
     [self.view addSubview:_recoredAnimationView];
@@ -36,9 +58,9 @@
     [self.view addSubview:_label];
     _audioSession = [AVAudioSession sharedInstance];
     [self.tableview registerNib:[UINib nibWithNibName:@"CustomCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
-    self.tableview.tableFooterView = [UIView new];
+//    self.tableview.tableFooterView = [UIView new];
     _datasource = @[].mutableCopy;
-   }
+}
 
 #pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -73,29 +95,46 @@
             model.isPlaying = YES;
             _previousSelectedModel = model;
             [self.audioPlayer stop];
-            [self playAudioWithURL:model.audioURL];
+            [self playAudioWithModel:model];
+//            [self playAudioWithURL:model.audioURL];
            
         }
     }
     else{
         _previousSelectedModel = model;
-        _previousSelectedModel.isPlaying = YES;
-        [self playAudioWithURL:model.audioURL];
+//        _previousSelectedModel.isPlaying = YES;
+        [self playAudioWithModel:model];
+//        [self playAudioWithURL:model.audioURL];
     }
-    [tableView reloadData];
+//    [tableView reloadData];
 }
-- (void)playAudioWithURL:(NSURL *)url{
+- (void)playAudioWithModel:(CustomCellModel *)model{
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     NSError * error;
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:model.audioURL error:&error];
     self.audioPlayer.delegate = self;
     BOOL success = [self.audioPlayer play];
     if (success) {
         NSLog(@"播放成功");
+        model.isPlaying = YES;
+        [self.tableview reloadData];
     }else{
         NSLog(@"播放失败");
     }
 }
+//- (void)playAudioWithURL:(NSURL *)url{
+//    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+//    NSError * error;
+//    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+//    self.audioPlayer.delegate = self;
+//    BOOL success = [self.audioPlayer play];
+//    if (success) {
+//        NSLog(@"播放成功");
+//        [tableView reloadData];
+//    }else{
+//        NSLog(@"播放失败");
+//    }
+//}
 #pragma mark -- Action
 - (IBAction)touchDown:(id)sender {
     NSLog(@"%s", __func__);
@@ -215,6 +254,7 @@
     [_datasource addObject:model];
     [_tableview insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
+
 - (void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError * __nullable)error{
     NSLog(@"%@", error);
 }
@@ -226,7 +266,6 @@
     self.audioPlayer = nil;
     _previousSelectedModel.isPlaying = NO;
     [self.tableview reloadData];
-    
 }
 
 - (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError * __nullable)error{

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,6 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -18,8 +19,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEF-WA-TRB">
+                                <rect key="frame" x="20" y="41" width="560" height="272"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1Pn-Bo-Mv0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="s88-HJ-HsN"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi8-JC-Rcb">
-                                <rect key="frame" x="274" y="515" width="53" height="30"/>
+                                <rect key="frame" x="249" y="314" width="53" height="30"/>
                                 <state key="normal" title="recored"/>
                                 <connections>
                                     <action selector="touchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="F1T-6q-YN5"/>
@@ -31,33 +41,24 @@
                                     <action selector="touchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="3wj-eu-ZbZ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eEF-WA-TRB">
-                                <rect key="frame" x="20" y="41" width="560" height="443"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1Pn-Bo-Mv0"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="s88-HJ-HsN"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eEF-WA-TRB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0vv-7l-GkM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eEF-WA-TRB" secondAttribute="trailing" id="1ga-uZ-APg"/>
-                            <constraint firstItem="eEF-WA-TRB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="41" id="ZrC-5v-LQb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hi8-JC-Rcb" secondAttribute="bottom" constant="55" id="egA-mx-sc7"/>
-                            <constraint firstItem="Hi8-JC-Rcb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g5g-uh-FTr"/>
-                            <constraint firstItem="Hi8-JC-Rcb" firstAttribute="top" secondItem="eEF-WA-TRB" secondAttribute="bottom" constant="31" id="mxi-Cb-eIN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hi8-JC-Rcb" secondAttribute="bottom" constant="256" id="4eO-wO-lv5"/>
+                            <constraint firstItem="Hi8-JC-Rcb" firstAttribute="top" secondItem="eEF-WA-TRB" secondAttribute="bottom" constant="1" id="5aX-5f-69E"/>
+                            <constraint firstItem="eEF-WA-TRB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Mk4-Ct-UgR"/>
+                            <constraint firstItem="eEF-WA-TRB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fU3-YU-zT6"/>
+                            <constraint firstItem="Hi8-JC-Rcb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="249" id="krp-s9-at5"/>
+                            <constraint firstItem="eEF-WA-TRB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="r0W-4z-LMi"/>
+                            <constraint firstItem="Hi8-JC-Rcb" firstAttribute="top" secondItem="eEF-WA-TRB" secondAttribute="bottom" constant="1" id="wS4-Rg-e5y"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableview" destination="eEF-WA-TRB" id="9g8-cr-yYd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="167"/>
+            <point key="canvasLocation" x="830" y="-115"/>
         </scene>
     </scenes>
 </document>

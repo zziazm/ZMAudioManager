@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface CustomCellModel : NSObject
+@property (nonatomic, copy) NSString * audioPath;
 @property (nonatomic, copy) NSURL * audioURL;
 @property (nonatomic, assign) BOOL isPlaying;
 @end
