@@ -168,7 +168,7 @@
         CustomCellModel * model = [[CustomCellModel alloc] init];
         model.audioPath = recordPath;
         [_metesTimer invalidate];
-            _recoredAnimationView.hidden = YES;
+        _recoredAnimationView.hidden = YES;
         [_datasource addObject:model];
         [_tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     }];
