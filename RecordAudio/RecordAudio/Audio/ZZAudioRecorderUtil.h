@@ -11,7 +11,19 @@
 @interface ZZAudioRecorderUtil : NSObject
 @property (nonatomic, strong) AVAudioRecorder * audioRecorder;
 @property (nonatomic, copy) NSDictionary * recoredSettings;
-+ (id)shareInstance;
++ (ZZAudioRecorderUtil  *)shareInstance;
+// 开始录音
++ (void)startRecordingWithPreparePath:(NSString *)aFilePath
+                                completion:(void(^)(NSError *error))completion;
+// 停止录音
++(void)stopRecordingWithCompletion:(void(^)(NSString *recordPath))completion;
+
+// 取消录音
++(void)cancelCurrentRecording;
+
++(AVAudioRecorder *)audioRecorder;
+
+
 
 - (void)startRecoredWithPath:(NSString *)path
                   completion:(void(^)(NSError *error))completion;

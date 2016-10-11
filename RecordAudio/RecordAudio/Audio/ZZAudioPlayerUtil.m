@@ -24,11 +24,11 @@
 }
 
 // 播放指定路径下音频（wav）
-+ (void)asyncPlayingWithPath:(NSString *)aFilePath
++ (void)playAudioWithPath:(NSString *)aFilePath
                   completion:(void(^)(NSError *error))completon{
-    [[ZZAudioPlayerUtil shareInstance] asyncPlayingWithPath:aFilePath completion:completon];
+    [[ZZAudioPlayerUtil shareInstance] playAudioWithPath:aFilePath completion:completon];
 }
-- (void)asyncPlayingWithPath:(NSString *)aFilePath
+- (void)playAudioWithPath:(NSString *)aFilePath
                   completion:(void(^)(NSError *error))completon{
     NSFileManager * fm = [NSFileManager defaultManager];
     _playFinish = completon;

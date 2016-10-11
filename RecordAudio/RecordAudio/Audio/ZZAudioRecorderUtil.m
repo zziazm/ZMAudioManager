@@ -14,7 +14,7 @@
 
 
 @implementation ZZAudioRecorderUtil
-+ (id)shareInstance{
++ (ZZAudioRecorderUtil *)shareInstance{
     static ZZAudioRecorderUtil * instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -22,6 +22,26 @@
     });
     return instance;
 }
+
+// 开始录音
++ (void)startRecordingWithPreparePath:(NSString *)aFilePath
+                           completion:(void(^)(NSError *error))completion{
+    [[ZZAudioRecorderUtil shareInstance] startRecoredWithPath:aFilePath completion:completion];
+}
+// 停止录音
++(void)stopRecordingWithCompletion:(void(^)(NSString *recordPath))completion{
+    [[ZZAudioRecorderUtil shareInstance] stopRecorderWithCompletion:completion];
+}
+
+
+// 取消录音
++(void)cancelCurrentRecording{
+    [[ZZAudioRecorderUtil shareInstance] cancelCurrentRecording];
+}
++(AVAudioRecorder *)audioRecorder{
+    return [ZZAudioRecorderUtil shareInstance].audioRecorder;
+}
+
 
 - (NSDictionary *)recoredSettings{
     if (!_recoredSettings) {

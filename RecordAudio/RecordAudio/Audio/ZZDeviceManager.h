@@ -20,7 +20,7 @@
     BOOL _isCloseToUser;
 }
 
-
++ (ZZDeviceManager *)shareInstance;
 // 播放音频
 - (void)playAudioWithPath:(NSString *)aFilePath
                   completion:(void(^)(NSError *error))completon;

@@ -10,11 +10,11 @@
 		5D12EB411DAA2CC50023B85A /* ZZAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB401DAA2CC50023B85A /* ZZAudioPlayerUtil.m */; };
 		5D12EB441DAB8C3F0023B85A /* ZZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB431DAB8C3F0023B85A /* ZZDeviceManager.m */; };
 		5D4BC5BC1D9A887B007A94A1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5BB1D9A887B007A94A1 /* RootViewController.m */; };
-		5D4BC5C21D9A8BDB007A94A1 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5C11D9A8BDB007A94A1 /* TestViewController.m */; };
+		5D4BC5C21D9A8BDB007A94A1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5C11D9A8BDB007A94A1 /* SecondViewController.m */; };
 		5D4BC5C61D9A959D007A94A1 /* ZZAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5C51D9A959D007A94A1 /* ZZAudioRecorderUtil.m */; };
 		5DEF03B61D73ED800007C8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03B51D73ED800007C8FD /* main.m */; };
 		5DEF03B91D73ED800007C8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03B81D73ED800007C8FD /* AppDelegate.m */; };
-		5DEF03BC1D73ED800007C8FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03BB1D73ED800007C8FD /* ViewController.m */; };
+		5DEF03BC1D73ED800007C8FD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03BB1D73ED800007C8FD /* FirstViewController.m */; };
 		5DEF03C11D73ED800007C8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF03C01D73ED800007C8FD /* Assets.xcassets */; };
 		5DEF03C41D73ED800007C8FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DEF03C21D73ED800007C8FD /* LaunchScreen.storyboard */; };
 		5DEF03CF1D73ED800007C8FD /* RecordAudioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03CE1D73ED800007C8FD /* RecordAudioTests.m */; };
@@ -92,16 +92,16 @@
 		5D12EB431DAB8C3F0023B85A /* ZZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDeviceManager.m; sourceTree = "<group>"; };
 		5D4BC5BA1D9A887B007A94A1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5D4BC5BB1D9A887B007A94A1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		5D4BC5C01D9A8BDB007A94A1 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		5D4BC5C11D9A8BDB007A94A1 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		5D4BC5C01D9A8BDB007A94A1 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		5D4BC5C11D9A8BDB007A94A1 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		5D4BC5C41D9A959D007A94A1 /* ZZAudioRecorderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAudioRecorderUtil.h; sourceTree = "<group>"; };
 		5D4BC5C51D9A959D007A94A1 /* ZZAudioRecorderUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAudioRecorderUtil.m; sourceTree = "<group>"; };
 		5DEF03B11D73ED800007C8FD /* RecordAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEF03B51D73ED800007C8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DEF03B71D73ED800007C8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DEF03B81D73ED800007C8FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5DEF03BA1D73ED800007C8FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5DEF03BB1D73ED800007C8FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5DEF03BA1D73ED800007C8FD /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		5DEF03BB1D73ED800007C8FD /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		5DEF03C01D73ED800007C8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DEF03C31D73ED800007C8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DEF03C51D73ED800007C8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -279,20 +279,20 @@
 				5DEF03B81D73ED800007C8FD /* AppDelegate.m */,
 				5D4BC5BA1D9A887B007A94A1 /* RootViewController.h */,
 				5D4BC5BB1D9A887B007A94A1 /* RootViewController.m */,
-				5DEF03BA1D73ED800007C8FD /* ViewController.h */,
-				5DEF03BB1D73ED800007C8FD /* ViewController.m */,
-				5D4BC5C01D9A8BDB007A94A1 /* TestViewController.h */,
-				5D4BC5C11D9A8BDB007A94A1 /* TestViewController.m */,
-				5DEF03ED1D7471230007C8FD /* Main.storyboard */,
-				5DEF03C01D73ED800007C8FD /* Assets.xcassets */,
-				5DEF03C21D73ED800007C8FD /* LaunchScreen.storyboard */,
-				5DEF03C51D73ED800007C8FD /* Info.plist */,
-				5DEF03B41D73ED800007C8FD /* Supporting Files */,
+				5DEF03BA1D73ED800007C8FD /* FirstViewController.h */,
+				5DEF03BB1D73ED800007C8FD /* FirstViewController.m */,
+				5D4BC5C01D9A8BDB007A94A1 /* SecondViewController.h */,
+				5D4BC5C11D9A8BDB007A94A1 /* SecondViewController.m */,
 				5DEF03F41D74739D0007C8FD /* CustomCell.h */,
 				5DEF03F51D74739D0007C8FD /* CustomCell.m */,
 				5DEF03F61D74739D0007C8FD /* CustomCell.xib */,
 				5DEF03F91D7475B20007C8FD /* CustomCellModel.h */,
 				5DEF03FA1D7475B20007C8FD /* CustomCellModel.m */,
+				5DEF03ED1D7471230007C8FD /* Main.storyboard */,
+				5DEF03C01D73ED800007C8FD /* Assets.xcassets */,
+				5DEF03C21D73ED800007C8FD /* LaunchScreen.storyboard */,
+				5DEF03C51D73ED800007C8FD /* Info.plist */,
+				5DEF03B41D73ED800007C8FD /* Supporting Files */,
 			);
 			path = RecordAudio;
 			sourceTree = "<group>";
@@ -504,9 +504,9 @@
 				5DEF03FB1D7475B20007C8FD /* CustomCellModel.m in Sources */,
 				5D4BC5BC1D9A887B007A94A1 /* RootViewController.m in Sources */,
 				5D4BC5C61D9A959D007A94A1 /* ZZAudioRecorderUtil.m in Sources */,
-				5D4BC5C21D9A8BDB007A94A1 /* TestViewController.m in Sources */,
+				5D4BC5C21D9A8BDB007A94A1 /* SecondViewController.m in Sources */,
 				5D12EB441DAB8C3F0023B85A /* ZZDeviceManager.m in Sources */,
-				5DEF03BC1D73ED800007C8FD /* ViewController.m in Sources */,
+				5DEF03BC1D73ED800007C8FD /* FirstViewController.m in Sources */,
 				5DEF03B91D73ED800007C8FD /* AppDelegate.m in Sources */,
 				5DEF03F71D74739D0007C8FD /* CustomCell.m in Sources */,
 				5DEF03B61D73ED800007C8FD /* main.m in Sources */,

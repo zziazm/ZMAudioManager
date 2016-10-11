@@ -13,9 +13,9 @@
 @property (nonatomic, strong) AVAudioPlayer * audioPlayer;
 + (ZZAudioPlayerUtil *)shareInstance;
 // 播放指定路径下音频（wav）
-+ (void)asyncPlayingWithPath:(NSString *)aFilePath
++ (void)playAudioWithPath:(NSString *)aFilePath
                   completion:(void(^)(NSError *error))completon;
-- (void)asyncPlayingWithPath:(NSString *)aFilePath
+- (void)playAudioWithPath:(NSString *)aFilePath
                   completion:(void(^)(NSError *error))completon;
 
 // 停止当前播放音频

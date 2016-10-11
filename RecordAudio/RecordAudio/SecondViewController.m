@@ -6,20 +6,20 @@
 //  Copyright © 2016年 zziazm. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "SecondViewController.h"
 #import "ZZAudioRecorderUtil.h"
 #import "ZZAudioPlayerUtil.h"
 #import "ZZDeviceManager.h"
 #import "CustomCellModel.h"
 #import "CustomCell.h"
-@interface TestViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface SecondViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSMutableArray * datasource;
 @property (nonatomic, strong) CustomCellModel * previousSelectedModel;
 
 @end
 
-@implementation TestViewController
+@implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -75,19 +75,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CustomCellModel * model = _datasource[indexPath.row];
-    if ([ZZAudioPlayerUtil shareInstance].audioPlayer.isPlaying) {
+    if ([[ZZDeviceManager shareInstance] isPlaying]) {
         if (model == _previousSelectedModel) {//选中的是正在播放的语音
             model.isPlaying = NO;
-            [[ZZAudioPlayerUtil shareInstance] stopCurrentPlaying];
+            [[ZZDeviceManager shareInstance] stopPlaying];
         }
         else{
             _previousSelectedModel.isPlaying = NO;
             model.isPlaying = YES;
             _previousSelectedModel = model;
-            [[ZZAudioPlayerUtil shareInstance] stopCurrentPlaying];
+            [[ZZDeviceManager shareInstance] stopPlaying];
+//            [[ZZAudioPlayerUtil shareInstance] stopCurrentPlaying];
             [self playAudioWithModel:model];
             //            [self playAudioWithURL:model.audioURL];
-            
         }
     }
     else{
@@ -102,33 +102,49 @@
 - (void)playAudioWithModel:(CustomCellModel *)model{
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [self.tableView reloadData];
-    [[ZZAudioPlayerUtil shareInstance] asyncPlayingWithPath:model.audioPath completion:^(NSError *error) {
+    [[ZZDeviceManager shareInstance] playAudioWithPath:model.audioPath completion:^(NSError *error) {
         _previousSelectedModel.isPlaying = NO;
         [self.tableView reloadData];
+
     }];
+//    [[ZZAudioPlayerUtil shareInstance] asyncPlayingWithPath:model.audioPath completion:^(NSError *error) {
+//        _previousSelectedModel.isPlaying = NO;
+//        [self.tableView reloadData];
+//    }];
 }
 
 #pragma mark -- Action
 - (IBAction)touchDown:(id)sender {
-    NSString * url = NSTemporaryDirectory();
-    url = [url stringByAppendingString:[NSString stringWithFormat:@"%f.wav", [[NSDate date] timeIntervalSince1970]]];
-    ZZAudioRecorderUtil * util = [ZZAudioRecorderUtil shareInstance];
-    [util startRecoredWithPath:url completion:^(NSError *error) {
-       
+    [[ZZDeviceManager shareInstance] startRecordingWithFileName:[NSString stringWithFormat:@"%f.wav", [[NSDate date] timeIntervalSince1970]] completion:^(NSError *error) {
+        
     }];
+//    NSString * url = NSTemporaryDirectory();
+
+//    url = [url stringByAppendingString:[NSString stringWithFormat:@"%f.wav", [[NSDate date] timeIntervalSince1970]]];
+//    ZZAudioRecorderUtil * util = [ZZAudioRecorderUtil shareInstance];
+//    [util startRecoredWithPath:url completion:^(NSError *error) {
+//       
+//    }];
 }
 
 - (IBAction)touchUpInside:(id)sender {
     NSLog(@"%s", __func__);
-    ZZAudioRecorderUtil * util = [ZZAudioRecorderUtil  shareInstance];
-    [util stopRecorderWithCompletion:^(NSString *recoredPath) {
+    [[ZZDeviceManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
         CustomCellModel * model = [[CustomCellModel alloc] init];
-//        model.audioURL = [NSURL fileURLWithPath:recoredPath];
-        model.audioPath = recoredPath;
+        //        model.audioURL = [NSURL fileURLWithPath:recoredPath];
+        model.audioPath = recordPath;
         [_datasource addObject:model];
         [_tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-
     }];
+//    ZZAudioRecorderUtil * util = [ZZAudioRecorderUtil  shareInstance];
+//    [util stopRecorderWithCompletion:^(NSString *recoredPath) {
+//        CustomCellModel * model = [[CustomCellModel alloc] init];
+////        model.audioURL = [NSURL fileURLWithPath:recoredPath];
+//        model.audioPath = recoredPath;
+//        [_datasource addObject:model];
+//        [_tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+//
+//    }];
 }
 
 - (IBAction)touchUpOutside:(id)sender {

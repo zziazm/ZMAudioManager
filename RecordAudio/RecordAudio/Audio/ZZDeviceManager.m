@@ -21,6 +21,15 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
 @end
 
 @implementation ZZDeviceManager
++ (ZZDeviceManager *)shareInstance{
+    static dispatch_once_t onceToken;
+    static ZZDeviceManager * manager;
+    dispatch_once(&onceToken, ^{
+        manager = [[ZZDeviceManager alloc] init];
+    });
+    return manager;
+}
+
 #pragma mark -- AudioPlayer
 // 播放音频
 - (void)playAudioWithPath:(NSString *)aFilePath
@@ -39,7 +48,7 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
     }
     NSString *wavFilePath = [[aFilePath stringByDeletingPathExtension] stringByAppendingPathExtension:@"wav"];
     //如果转换后的wav文件不存在, 则去转换一下
-    [ZZAudioPlayerUtil asyncPlayingWithPath:wavFilePath
+    [ZZAudioPlayerUtil playAudioWithPath:wavFilePath
                                  completion:^(NSError *error)
      {
          [self setupAudioSessionCategory:ZZ_DEFAULT

@@ -7,8 +7,8 @@
 //
 
 #import "RootViewController.h"
-#import "ViewController.h"
-#import "TestViewController.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
 @interface RootViewController ()
 
 @end
@@ -58,10 +58,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
-        [self.navigationController pushViewController:[[ViewController alloc]init] animated:YES];
+        [self.navigationController pushViewController:[[FirstViewController alloc]init] animated:YES];
     }
     if (indexPath.row == 1) {
-        [self.navigationController pushViewController:[[TestViewController alloc] init] animated:YES];
+        [self.navigationController pushViewController:[[SecondViewController alloc] init] animated:YES];
     }
 
 }
