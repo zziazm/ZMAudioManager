@@ -48,4 +48,11 @@
 // 当前是否正在录音
 -(BOOL)isRecording;
 
+// 判断麦克风是否可用
+- (BOOL)checkMicrophoneAvailability;
+
+// 获取录制音频时的音量(0~1)
+- (double)peekRecorderVoiceMeter;
+
+
 @end

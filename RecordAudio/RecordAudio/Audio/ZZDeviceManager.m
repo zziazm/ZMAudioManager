@@ -57,8 +57,8 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
              completon(error);
          }
      }];
-
 }
+
 // 停止播放
 - (void)stopPlaying{
     [ZZAudioPlayerUtil stopCurrentPlaying];
@@ -85,7 +85,11 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
 - (void)startRecordingWithFileName:(NSString *)fileName
                         completion:(void(^)(NSError *error))completion{
     NSError *error = nil;
-    
+    if (![[ZZDeviceManager shareInstance] checkMicrophoneAvailability]) {
+        NSLog(@"麦克风不可用");
+        return;
+    }
+   
     // 判断当前是否是录音状态
     if ([self isRecording]) {
         if (completion) {
@@ -233,6 +237,35 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
     _currCategory = audioSessionCategory;
     
     return error;
+}
+// 判断麦克风是否可用
+- (BOOL)checkMicrophoneAvailability{
+    __block BOOL ret = NO;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    if ([session respondsToSelector:@selector(requestRecordPermission:)]) {
+        [session performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+            ret = granted;
+        }];
+    } else {
+        ret = YES;
+    }
+    
+    return ret;
+
+}
+
+// 获取录制音频时的音量(0~1)
+- (double)peekRecorderVoiceMeter{
+    double ret = 0.0;
+    if ([ZZAudioRecorderUtil audioRecorder].isRecording) {
+        [[ZZAudioRecorderUtil audioRecorder] updateMeters];
+        //获取音量的平均值  [recorder averagePowerForChannel:0];
+        //音量的最大值  [recorder peakPowerForChannel:0];
+        double lowPassResults = pow(10, (0.05 * [[ZZAudioRecorderUtil audioRecorder] peakPowerForChannel:0]));
+        ret = lowPassResults;
+    }
+    return ret;
+
 }
 
 @end
