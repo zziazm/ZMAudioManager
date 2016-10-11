@@ -166,9 +166,9 @@
     NSLog(@"%s", __func__);
     [[ZZDeviceManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
         CustomCellModel * model = [[CustomCellModel alloc] init];
-        //        model.audioURL = [NSURL fileURLWithPath:recoredPath];
         model.audioPath = recordPath;
-        _recoredAnimationView.hidden = YES;
+        [_metesTimer invalidate];
+            _recoredAnimationView.hidden = YES;
         [_datasource addObject:model];
         [_tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     }];

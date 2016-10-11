@@ -29,7 +29,13 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
     });
     return manager;
 }
-
+- (id)init{
+    if (self = [super init]) {
+//        [self _setupProximitySensor];
+//        [self registerNotifications];
+    }
+    return self;
+}
 #pragma mark -- AudioPlayer
 // 播放音频
 - (void)playAudioWithPath:(NSString *)aFilePath
@@ -267,5 +273,86 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
     return ret;
 
 }
+
+//#pragma mark -- ProximitySensor
+//- (void)registerNotifications
+//{
+//    [self unregisterNotifications];
+//    if (_isSupportProximitySensor) {
+//        static NSString *notif = @"UIDeviceProximityStateDidChangeNotification";
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(sensorStateChanged:)
+//                                                     name:notif
+//                                                   object:nil];
+//    }
+//}
+//
+//- (void)unregisterNotifications {
+//    if (_isSupportProximitySensor) {
+//        static NSString *notif = @"UIDeviceProximityStateDidChangeNotification";
+//        [[NSNotificationCenter defaultCenter] removeObserver:self
+//                                                        name:notif
+//                                                      object:nil];
+//    }
+//}
+//
+//- (void)_setupProximitySensor
+//{
+//    
+//    UIDevice *device = [UIDevice currentDevice];
+//    [device setProximityMonitoringEnabled:YES];
+//    _isSupportProximitySensor = device.proximityMonitoringEnabled;
+//    if (_isSupportProximitySensor) {
+//        [device setProximityMonitoringEnabled:NO];
+//    } else {
+//        
+//    }
+//}
+//- (BOOL)isProximitySensorEnabled {
+//    BOOL ret = NO;
+//    ret = self.isSupportProximitySensor && [UIDevice currentDevice].proximityMonitoringEnabled;
+//    return ret;
+//}
+//
+//- (BOOL)enableProximitySensor {
+//    BOOL ret = NO;
+//    if (_isSupportProximitySensor) {
+//        [[UIDevice currentDevice] setProximityMonitoringEnabled:YES];
+//        ret = YES;
+//    }
+//    
+//    return ret;
+//}
+//
+//- (BOOL)disableProximitySensor {
+//    BOOL ret = NO;
+//    if (_isSupportProximitySensor) {
+//        [[UIDevice currentDevice] setProximityMonitoringEnabled:NO];
+//        _isCloseToUser = NO;
+//        ret = YES;
+//    }
+//    
+//    return ret;
+//}
+//
+//- (void)sensorStateChanged:(NSNotification *)notification {
+//    BOOL ret = NO;
+//    if ([[UIDevice currentDevice] proximityState] == YES) {
+//        ret = YES;
+//    }
+//    _isCloseToUser = ret;
+////    if([self.delegate respondsToSelector:@selector(proximitySensorChanged:)]){
+////        [self.delegate proximitySensorChanged:_isCloseToUser];
+////    }
+//}
+//
+//#pragma mark - getter
+//- (BOOL)isCloseToUser {
+//    return _isCloseToUser;
+//}
+//
+//- (BOOL)isSupportProximitySensor {
+//    return _isSupportProximitySensor;
+//}
 
 @end
