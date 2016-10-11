@@ -99,5 +99,18 @@
 
 
 
+- (BOOL)checkMicrophoneAvailability{
+    __block BOOL ret = NO;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    if ([session respondsToSelector:@selector(requestRecordPermission:)]) {
+        [session performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+            ret = granted;
+        }];
+    } else {
+        ret = YES;
+    }
+    
+    return ret;
+}
 
 @end

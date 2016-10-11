@@ -51,17 +51,29 @@
     _recoredAnimationView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     _recoredAnimationView.center = self.view.center;
     [self.view addSubview:_recoredAnimationView];
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    _label.center = CGPointMake(_recoredAnimationView.center.x, _recoredAnimationView.center.y + 70);
-    _recoredAnimationView.hidden = YES;
-    _label.text= @"长按按钮开始录音";
-    [self.view addSubview:_label];
+//    _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+//    _label.center = CGPointMake(_recoredAnimationView.center.x, _recoredAnimationView.center.y + 70);
+//    _recoredAnimationView.hidden = YES;
+//    _label.text= @"长按按钮开始录音";
+//    [self.view addSubview:_label];
     _audioSession = [AVAudioSession sharedInstance];
     [self.tableview registerNib:[UINib nibWithNibName:@"CustomCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
 //    self.tableview.tableFooterView = [UIView new];
     _datasource = @[].mutableCopy;
 }
-
+- (BOOL)checkMicrophoneAvailability{
+    __block BOOL ret = NO;
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    if ([session respondsToSelector:@selector(requestRecordPermission:)]) {
+        [session performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+            ret = granted;
+        }];
+    } else {
+        ret = YES;
+    }
+    
+    return ret;
+}
 #pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _datasource.count;
@@ -138,6 +150,11 @@
 #pragma mark -- Action
 - (IBAction)touchDown:(id)sender {
     NSLog(@"%s", __func__);
+    
+    if (![self checkMicrophoneAvailability]) {
+        NSLog(@"麦克风不可用");
+        return;
+    }
     NSError * error;
     NSString * url = NSTemporaryDirectory();
     url = [url stringByAppendingString:[NSString stringWithFormat:@"%f.wav", [[NSDate date] timeIntervalSince1970]]];

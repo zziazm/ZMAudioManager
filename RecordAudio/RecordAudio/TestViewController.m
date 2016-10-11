@@ -9,6 +9,7 @@
 #import "TestViewController.h"
 #import "ZZAudioRecorderUtil.h"
 #import "ZZAudioPlayerUtil.h"
+#import "ZZDeviceManager.h"
 #import "CustomCellModel.h"
 #import "CustomCell.h"
 @interface TestViewController ()<UITableViewDelegate, UITableViewDataSource>
