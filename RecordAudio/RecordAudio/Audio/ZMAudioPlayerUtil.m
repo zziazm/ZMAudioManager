@@ -1,22 +1,22 @@
 //
-//  ZZAudioPlayerUtil.m
+//  ZMAudioPlayerUtil.m
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/10/9.
-//  Copyright © 2016年 zziazm. All rights reserved.
+//  Copyright © 2016年 ZMiazm. All rights reserved.
 //
 
-#import "ZZAudioPlayerUtil.h"
+#import "ZMAudioPlayerUtil.h"
 
-@interface ZZAudioPlayerUtil ()<AVAudioPlayerDelegate>
+@interface ZMAudioPlayerUtil ()<AVAudioPlayerDelegate>
 @property (nonatomic, copy) void(^playFinish)(NSError * error);
 @end
 
-@implementation ZZAudioPlayerUtil
+@implementation ZMAudioPlayerUtil
 
-+ (ZZAudioPlayerUtil *)shareInstance{
++ (ZMAudioPlayerUtil *)shareInstance{
     static dispatch_once_t onceToken;
-    static ZZAudioPlayerUtil *audioPlayerUtil = nil;
+    static ZMAudioPlayerUtil *audioPlayerUtil = nil;
     dispatch_once(&onceToken, ^{
         audioPlayerUtil = [[self alloc] init];
     });
@@ -26,7 +26,7 @@
 // 播放指定路径下音频（wav）
 + (void)playAudioWithPath:(NSString *)aFilePath
                   completion:(void(^)(NSError *error))completon{
-    [[ZZAudioPlayerUtil shareInstance] playAudioWithPath:aFilePath completion:completon];
+    [[ZMAudioPlayerUtil shareInstance] playAudioWithPath:aFilePath completion:completon];
 }
 - (void)playAudioWithPath:(NSString *)aFilePath
                   completion:(void(^)(NSError *error))completon{
@@ -61,7 +61,7 @@
 }
 // 停止当前播放
 + (void)stopCurrentPlaying{
-    [[ZZAudioPlayerUtil shareInstance] stopCurrentPlaying];
+    [[ZMAudioPlayerUtil shareInstance] stopCurrentPlaying];
 }
 - (void)stopCurrentPlaying{
     if(_audioPlayer){

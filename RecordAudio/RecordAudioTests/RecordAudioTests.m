@@ -3,7 +3,7 @@
 //  RecordAudioTests
 //
 //  Created by 赵铭 on 16/8/29.
-//  Copyright © 2016年 zziazm. All rights reserved.
+//  Copyright © 2016年 ZMiazm. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

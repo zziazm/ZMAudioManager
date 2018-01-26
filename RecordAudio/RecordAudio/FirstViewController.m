@@ -3,7 +3,7 @@
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/8/29.
-//  Copyright © 2016年 zziazm. All rights reserved.
+//  Copyright © 2016年 ZMiazm. All rights reserved.
 //
 
 #import "FirstViewController.h"
@@ -34,6 +34,8 @@
     
     UIToolbar * toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 44, [UIScreen mainScreen].bounds.size.width, 44)];
     [self.view addSubview:toolbar];
+    [toolbar layoutIfNeeded];
+
     UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.frame = CGRectMake(0, 0, 100, 30);
     button.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, 22);

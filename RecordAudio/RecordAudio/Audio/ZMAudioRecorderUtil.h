@@ -1,17 +1,17 @@
 //
-//  ZZAudioRecorderUtil.h
+//  ZMAudioRecorderUtil.h
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/9/27.
-//  Copyright © 2016年 zziazm. All rights reserved.
+//  Copyright © 2016年 ZMiazm. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-@interface ZZAudioRecorderUtil : NSObject
+@interface ZMAudioRecorderUtil : NSObject
 @property (nonatomic, strong) AVAudioRecorder * audioRecorder;
 @property (nonatomic, copy) NSDictionary * recoredSettings;
-+ (ZZAudioRecorderUtil  *)shareInstance;
++ (ZMAudioRecorderUtil  *)shareInstance;
 // 开始录音
 + (void)startRecordingWithPreparePath:(NSString *)aFilePath
                                 completion:(void(^)(NSError *error))completion;

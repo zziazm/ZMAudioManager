@@ -3,16 +3,16 @@
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/9/27.
-//  Copyright © 2016年 zziazm. All rights reserved.
+//  Copyright © 2016年 ZMiazm. All rights reserved.
 //
 
 #import "SecondViewController.h"
-#import "ZZAudioRecorderUtil.h"
-#import "ZZAudioPlayerUtil.h"
-#import "ZZDeviceManager.h"
+#import "ZMAudioRecorderUtil.h"
+#import "ZMAudioPlayerUtil.h"
+#import "ZMDeviceManager.h"
 #import "CustomCellModel.h"
 #import "CustomCell.h"
-@interface SecondViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface SecondViewController ()<UITableViewDelegate, UITableViewDataSource, ZMDeviceManagerDelegate>
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSMutableArray * datasource;
 @property (nonatomic, strong) CustomCellModel * previousSelectedModel;
@@ -36,6 +36,8 @@
     [self.view addSubview:_recoredAnimationView];
     UIToolbar * toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 44, [UIScreen mainScreen].bounds.size.width, 44)];
     [self.view addSubview:toolbar];
+    [toolbar layoutIfNeeded];
+
     UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.frame = CGRectMake(0, 0, 100, 30);
     button.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, 22);
@@ -50,6 +52,7 @@
     [button addTarget:self action:@selector(touchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
     
     _datasource = @[].mutableCopy;
+    [ZMDeviceManager shareInstance].delegate = self;
     // Do any additional setup after loading the view.
 }
 #pragma mark -- UITableViewDataSource
@@ -78,16 +81,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CustomCellModel * model = _datasource[indexPath.row];
-    if ([[ZZDeviceManager shareInstance] isPlaying]) {
+    if ([[ZMDeviceManager shareInstance] isPlaying]) {
         if (model == _previousSelectedModel) {//选中的是正在播放的语音
             model.isPlaying = NO;
-            [[ZZDeviceManager shareInstance] stopPlaying];
+            [[ZMDeviceManager shareInstance] stopPlaying];
         }
         else{
             _previousSelectedModel.isPlaying = NO;
             model.isPlaying = YES;
             _previousSelectedModel = model;
-            [[ZZDeviceManager shareInstance] stopPlaying];
+            [[ZMDeviceManager shareInstance] stopPlaying];
             [self playAudioWithModel:model];
         }
     }
@@ -100,7 +103,7 @@
 - (void)playAudioWithModel:(CustomCellModel *)model{
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [self.tableView reloadData];
-    [[ZZDeviceManager shareInstance] playAudioWithPath:model.audioPath completion:^(NSError *error) {
+    [[ZMDeviceManager shareInstance] playAudioWithPath:model.audioPath completion:^(NSError *error) {
         _previousSelectedModel.isPlaying = NO;
         [self.tableView reloadData];
 
@@ -108,8 +111,9 @@
 }
 
 #pragma mark -- Action
+//开始录音
 - (IBAction)touchDown:(id)sender {
-    [[ZZDeviceManager shareInstance] startRecordingWithFileName:[NSString stringWithFormat:@"%f.wav", [[NSDate date] timeIntervalSince1970]] completion:^(NSError *error) {
+    [[ZMDeviceManager shareInstance] startRecordingWithFileName:[NSString stringWithFormat:@"%f.wav", [[NSDate date] timeIntervalSince1970]] completion:^(NSError *error) {
         if (error) {
             
         }else{
@@ -117,9 +121,46 @@
         }
     }];
 }
+
+- (IBAction)touchUpInside:(id)sender {
+    NSLog(@"%s", __func__);
+    [[ZMDeviceManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
+        CustomCellModel * model = [[CustomCellModel alloc] init];
+        model.audioPath = recordPath;
+        [_metesTimer invalidate];
+        _recoredAnimationView.hidden = YES;
+        [_datasource addObject:model];
+        [_tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    }];
+}
+
+- (IBAction)touchUpOutside:(id)sender {
+
+}
+
+- (IBAction)touchDragEnter:(id)sender {
+//    _label.text = @"手指上划，取消录音";
+//    NSLog(@"%s", __func__);
+    
+}
+
+- (IBAction)touchDragExit:(id)sender {
+//    _label.text = @"松开手指，取消录音";
+//    NSLog(@"%s", __func__);
+    
+}
+
+- (IBAction)touchDragInside:(id)sender {
+    NSLog(@"%s", __func__);
+    
+}
+- (IBAction)touchDragOutside:(id)sender {
+    NSLog(@"%s", __func__);
+}
+
 - (void)setVoiceImage{
     _recoredAnimationView.hidden = NO;
-    double voiceSound = [[ZZDeviceManager shareInstance] peekRecorderVoiceMeter];
+    double voiceSound = [[ZMDeviceManager shareInstance] peekRecorderVoiceMeter];
     if (0 < voiceSound <= 0.05) {
         [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback001"]];
     }else if (0.05<voiceSound<=0.10) {
@@ -162,42 +203,19 @@
         [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback020"]];
     }
 }
-- (IBAction)touchUpInside:(id)sender {
-    NSLog(@"%s", __func__);
-    [[ZZDeviceManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
-        CustomCellModel * model = [[CustomCellModel alloc] init];
-        model.audioPath = recordPath;
-        [_metesTimer invalidate];
-        _recoredAnimationView.hidden = YES;
-        [_datasource addObject:model];
-        [_tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-    }];
+#pragma mark -- ZMDeviceManagerDelegate
+- (void)proximitySensorChanged:(BOOL)isCloseToUser
+{
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    if (isCloseToUser)
+    {
+        //如果此时手机靠近面部放在耳朵旁，那么声音将通过听筒输出，并将屏幕变暗（省电啊）
+        [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    } else {
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+    }
+    [audioSession setActive:YES error:nil];
 }
-
-- (IBAction)touchUpOutside:(id)sender {
-
-}
-
-- (IBAction)touchDragEnter:(id)sender {
-//    _label.text = @"手指上划，取消录音";
-//    NSLog(@"%s", __func__);
-    
-}
-
-- (IBAction)touchDragExit:(id)sender {
-//    _label.text = @"松开手指，取消录音";
-//    NSLog(@"%s", __func__);
-    
-}
-
-- (IBAction)touchDragInside:(id)sender {
-    NSLog(@"%s", __func__);
-    
-}
-- (IBAction)touchDragOutside:(id)sender {
-    NSLog(@"%s", __func__);
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

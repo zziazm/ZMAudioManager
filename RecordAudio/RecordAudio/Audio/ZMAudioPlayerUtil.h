@@ -1,17 +1,17 @@
 //
-//  ZZAudioPlayerUtil.h
+//  ZMAudioPlayerUtil.h
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/10/9.
-//  Copyright © 2016年 zziazm. All rights reserved.
+//  Copyright © 2016年 ZMiazm. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ZZAudioPlayerUtil : NSObject
+@interface ZMAudioPlayerUtil : NSObject
 @property (nonatomic, strong) AVAudioPlayer * audioPlayer;
-+ (ZZAudioPlayerUtil *)shareInstance;
++ (ZMAudioPlayerUtil *)shareInstance;
 // 播放指定路径下音频（wav）
 + (void)playAudioWithPath:(NSString *)aFilePath
                   completion:(void(^)(NSError *error))completon;

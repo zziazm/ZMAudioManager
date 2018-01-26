@@ -1,24 +1,24 @@
 //
-//  ZZAudioRecorderUtil.m
+//  ZMAudioRecorderUtil.m
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/9/27.
-//  Copyright © 2016年 zziazm. All rights reserved.
+//  Copyright © 2016年 ZMiazm. All rights reserved.
 //
 
-#import "ZZAudioRecorderUtil.h"
+#import "ZMAudioRecorderUtil.h"
 
-@interface ZZAudioRecorderUtil()<AVAudioRecorderDelegate>
+@interface ZMAudioRecorderUtil()<AVAudioRecorderDelegate>
 @property (nonatomic, copy) void(^recoredFinish)(NSString * recoredPath);
 @end
 
 
-@implementation ZZAudioRecorderUtil
-+ (ZZAudioRecorderUtil *)shareInstance{
-    static ZZAudioRecorderUtil * instance;
+@implementation ZMAudioRecorderUtil
++ (ZMAudioRecorderUtil *)shareInstance{
+    static ZMAudioRecorderUtil * instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[ZZAudioRecorderUtil alloc] init];
+        instance = [[ZMAudioRecorderUtil alloc] init];
     });
     return instance;
 }
@@ -26,20 +26,20 @@
 // 开始录音
 + (void)startRecordingWithPreparePath:(NSString *)aFilePath
                            completion:(void(^)(NSError *error))completion{
-    [[ZZAudioRecorderUtil shareInstance] startRecoredWithPath:aFilePath completion:completion];
+    [[ZMAudioRecorderUtil shareInstance] startRecoredWithPath:aFilePath completion:completion];
 }
 // 停止录音
 +(void)stopRecordingWithCompletion:(void(^)(NSString *recordPath))completion{
-    [[ZZAudioRecorderUtil shareInstance] stopRecorderWithCompletion:completion];
+    [[ZMAudioRecorderUtil shareInstance] stopRecorderWithCompletion:completion];
 }
 
 
 // 取消录音
 +(void)cancelCurrentRecording{
-    [[ZZAudioRecorderUtil shareInstance] cancelCurrentRecording];
+    [[ZMAudioRecorderUtil shareInstance] cancelCurrentRecording];
 }
 +(AVAudioRecorder *)audioRecorder{
-    return [ZZAudioRecorderUtil shareInstance].audioRecorder;
+    return [ZMAudioRecorderUtil shareInstance].audioRecorder;
 }
 
 

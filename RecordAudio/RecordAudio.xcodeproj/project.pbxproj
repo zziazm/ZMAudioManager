@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D12EB411DAA2CC50023B85A /* ZZAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB401DAA2CC50023B85A /* ZZAudioPlayerUtil.m */; };
-		5D12EB441DAB8C3F0023B85A /* ZZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB431DAB8C3F0023B85A /* ZZDeviceManager.m */; };
+		5D12EB411DAA2CC50023B85A /* ZMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB401DAA2CC50023B85A /* ZMAudioPlayerUtil.m */; };
+		5D12EB441DAB8C3F0023B85A /* ZMDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB431DAB8C3F0023B85A /* ZMDeviceManager.m */; };
 		5D4BC5BC1D9A887B007A94A1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5BB1D9A887B007A94A1 /* RootViewController.m */; };
 		5D4BC5C21D9A8BDB007A94A1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5C11D9A8BDB007A94A1 /* SecondViewController.m */; };
-		5D4BC5C61D9A959D007A94A1 /* ZZAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5C51D9A959D007A94A1 /* ZZAudioRecorderUtil.m */; };
+		5D4BC5C61D9A959D007A94A1 /* ZMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5C51D9A959D007A94A1 /* ZMAudioRecorderUtil.m */; };
 		5DEF03B61D73ED800007C8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03B51D73ED800007C8FD /* main.m */; };
 		5DEF03B91D73ED800007C8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03B81D73ED800007C8FD /* AppDelegate.m */; };
 		5DEF03BC1D73ED800007C8FD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEF03BB1D73ED800007C8FD /* FirstViewController.m */; };
@@ -66,6 +66,7 @@
 		5DFCC03B1D756CD7000B113F /* VoiceSearchFeedback019@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0131D756CD7000B113F /* VoiceSearchFeedback019@2x.png */; };
 		5DFCC03C1D756CD7000B113F /* VoiceSearchFeedback020.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0141D756CD7000B113F /* VoiceSearchFeedback020.png */; };
 		5DFCC03D1D756CD7000B113F /* VoiceSearchFeedback020@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0151D756CD7000B113F /* VoiceSearchFeedback020@2x.png */; };
+		98159795201B039300C9500A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98159794201B039300C9500A /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,16 +87,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D12EB3F1DAA2CC50023B85A /* ZZAudioPlayerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAudioPlayerUtil.h; sourceTree = "<group>"; };
-		5D12EB401DAA2CC50023B85A /* ZZAudioPlayerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAudioPlayerUtil.m; sourceTree = "<group>"; };
-		5D12EB421DAB8C3F0023B85A /* ZZDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDeviceManager.h; sourceTree = "<group>"; };
-		5D12EB431DAB8C3F0023B85A /* ZZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDeviceManager.m; sourceTree = "<group>"; };
+		5D12EB3F1DAA2CC50023B85A /* ZMAudioPlayerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAudioPlayerUtil.h; sourceTree = "<group>"; };
+		5D12EB401DAA2CC50023B85A /* ZMAudioPlayerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMAudioPlayerUtil.m; sourceTree = "<group>"; };
+		5D12EB421DAB8C3F0023B85A /* ZMDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDeviceManager.h; sourceTree = "<group>"; };
+		5D12EB431DAB8C3F0023B85A /* ZMDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDeviceManager.m; sourceTree = "<group>"; };
 		5D4BC5BA1D9A887B007A94A1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5D4BC5BB1D9A887B007A94A1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5D4BC5C01D9A8BDB007A94A1 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		5D4BC5C11D9A8BDB007A94A1 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		5D4BC5C41D9A959D007A94A1 /* ZZAudioRecorderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAudioRecorderUtil.h; sourceTree = "<group>"; };
-		5D4BC5C51D9A959D007A94A1 /* ZZAudioRecorderUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAudioRecorderUtil.m; sourceTree = "<group>"; };
+		5D4BC5C41D9A959D007A94A1 /* ZMAudioRecorderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAudioRecorderUtil.h; sourceTree = "<group>"; };
+		5D4BC5C51D9A959D007A94A1 /* ZMAudioRecorderUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMAudioRecorderUtil.m; sourceTree = "<group>"; };
 		5DEF03B11D73ED800007C8FD /* RecordAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEF03B51D73ED800007C8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DEF03B71D73ED800007C8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +161,8 @@
 		5DFCC0131D756CD7000B113F /* VoiceSearchFeedback019@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback019@2x.png"; sourceTree = "<group>"; };
 		5DFCC0141D756CD7000B113F /* VoiceSearchFeedback020.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceSearchFeedback020.png; sourceTree = "<group>"; };
 		5DFCC0151D756CD7000B113F /* VoiceSearchFeedback020@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback020@2x.png"; sourceTree = "<group>"; };
+		98159793201B039300C9500A /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		98159794201B039300C9500A /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,12 +243,12 @@
 		5D4BC5C31D9A9559007A94A1 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				5D4BC5C41D9A959D007A94A1 /* ZZAudioRecorderUtil.h */,
-				5D4BC5C51D9A959D007A94A1 /* ZZAudioRecorderUtil.m */,
-				5D12EB3F1DAA2CC50023B85A /* ZZAudioPlayerUtil.h */,
-				5D12EB401DAA2CC50023B85A /* ZZAudioPlayerUtil.m */,
-				5D12EB421DAB8C3F0023B85A /* ZZDeviceManager.h */,
-				5D12EB431DAB8C3F0023B85A /* ZZDeviceManager.m */,
+				5D4BC5C41D9A959D007A94A1 /* ZMAudioRecorderUtil.h */,
+				5D4BC5C51D9A959D007A94A1 /* ZMAudioRecorderUtil.m */,
+				5D12EB3F1DAA2CC50023B85A /* ZMAudioPlayerUtil.h */,
+				5D12EB401DAA2CC50023B85A /* ZMAudioPlayerUtil.m */,
+				5D12EB421DAB8C3F0023B85A /* ZMDeviceManager.h */,
+				5D12EB431DAB8C3F0023B85A /* ZMDeviceManager.m */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -279,6 +282,8 @@
 				5DEF03B81D73ED800007C8FD /* AppDelegate.m */,
 				5D4BC5BA1D9A887B007A94A1 /* RootViewController.h */,
 				5D4BC5BB1D9A887B007A94A1 /* RootViewController.m */,
+				98159793201B039300C9500A /* BaseViewController.h */,
+				98159794201B039300C9500A /* BaseViewController.m */,
 				5DEF03BA1D73ED800007C8FD /* FirstViewController.h */,
 				5DEF03BB1D73ED800007C8FD /* FirstViewController.m */,
 				5D4BC5C01D9A8BDB007A94A1 /* SecondViewController.h */,
@@ -500,12 +505,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D12EB411DAA2CC50023B85A /* ZZAudioPlayerUtil.m in Sources */,
+				5D12EB411DAA2CC50023B85A /* ZMAudioPlayerUtil.m in Sources */,
 				5DEF03FB1D7475B20007C8FD /* CustomCellModel.m in Sources */,
+				98159795201B039300C9500A /* BaseViewController.m in Sources */,
 				5D4BC5BC1D9A887B007A94A1 /* RootViewController.m in Sources */,
-				5D4BC5C61D9A959D007A94A1 /* ZZAudioRecorderUtil.m in Sources */,
+				5D4BC5C61D9A959D007A94A1 /* ZMAudioRecorderUtil.m in Sources */,
 				5D4BC5C21D9A8BDB007A94A1 /* SecondViewController.m in Sources */,
-				5D12EB441DAB8C3F0023B85A /* ZZDeviceManager.m in Sources */,
+				5D12EB441DAB8C3F0023B85A /* ZMDeviceManager.m in Sources */,
 				5DEF03BC1D73ED800007C8FD /* FirstViewController.m in Sources */,
 				5DEF03B91D73ED800007C8FD /* AppDelegate.m in Sources */,
 				5DEF03F71D74739D0007C8FD /* CustomCell.m in Sources */,
@@ -647,7 +653,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RecordAudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zzia.RecordAudio;
+				PRODUCT_BUNDLE_IDENTIFIER = zm.RecordAudio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -659,7 +665,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RecordAudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zzia.RecordAudio;
+				PRODUCT_BUNDLE_IDENTIFIER = zm.RecordAudio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
