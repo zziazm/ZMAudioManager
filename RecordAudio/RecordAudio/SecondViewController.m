@@ -18,13 +18,14 @@
 @property (nonatomic, strong) CustomCellModel * previousSelectedModel;
 @property (nonatomic, strong) NSTimer * metesTimer;
 @property (nonatomic, strong) UIImageView * recoredAnimationView;
-
+@property (nonatomic, copy) NSArray *voiceMessageAnimationImages;
 @end
 
 @implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _voiceMessageAnimationImages = @[@"VoiceSearchFeedback001",@"VoiceSearchFeedback002",@"VoiceSearchFeedback003",@"VoiceSearchFeedback004",@"VoiceSearchFeedback005",@"VoiceSearchFeedback006",@"VoiceSearchFeedback007",@"VoiceSearchFeedback008",@"VoiceSearchFeedback009",@"VoiceSearchFeedback010",@"VoiceSearchFeedback011",@"VoiceSearchFeedback012",@"VoiceSearchFeedback013",@"VoiceSearchFeedback014",@"VoiceSearchFeedback015",@"VoiceSearchFeedback016",@"VoiceSearchFeedback017",@"VoiceSearchFeedback018",@"VoiceSearchFeedback019",@"VoiceSearchFeedback020"];
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height -44) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -174,47 +175,53 @@
 - (void)setVoiceImage{
     _recoredAnimationView.hidden = NO;
     double voiceSound = [[ZMAudioManager shareInstance] peekRecorderVoiceMeter];
-    if (0 < voiceSound <= 0.05) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback001"]];
-    }else if (0.05<voiceSound<=0.10) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback002"]];
-    }else if (0.10<voiceSound<=0.15) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback003"]];
-    }else if (0.15<voiceSound<=0.20) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback004"]];
-    }else if (0.20<voiceSound<=0.25) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback005"]];
-    }else if (0.25<voiceSound<=0.30) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback006"]];
-    }else if (0.30<voiceSound<=0.35) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback007"]];
-    }else if (0.35<voiceSound<=0.40) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback008"]];
-    }else if (0.40<voiceSound<=0.45) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback009"]];
-    }else if (0.45<voiceSound<=0.50) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback010"]];
-    }else if (0.50<voiceSound<=0.55) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback011"]];
-    }else if (0.55<voiceSound<=0.60) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback012"]];
-    }else if (0.60<voiceSound<=0.65) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback013"]];
-    }else if (0.65<voiceSound<=0.70) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback014"]];
-    }else if (0.70<voiceSound<=0.75) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback015"]];
-    }else if (0.75<voiceSound<=0.80) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback016"]];
-    }else if (0.80<voiceSound<=0.85) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback017"]];
-    }else if (0.85<voiceSound<=0.90) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback018"]];
-    }else if (0.90<voiceSound<=0.95) {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback019"]];
-    }else {
-        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback020"]];
+    int index = voiceSound*[_voiceMessageAnimationImages count];
+    if (index >= [_voiceMessageAnimationImages count]) {
+        _recoredAnimationView.image = [UIImage imageNamed:[_voiceMessageAnimationImages lastObject]];
+    } else {
+        _recoredAnimationView.image = [UIImage imageNamed:[_voiceMessageAnimationImages objectAtIndex:index]];
     }
+//    if (0 < voiceSound <= 0.05) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback001"]];
+//    }else if (0.05<voiceSound<=0.10) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback002"]];
+//    }else if (0.10<voiceSound<=0.15) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback003"]];
+//    }else if (0.15<voiceSound<=0.20) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback004"]];
+//    }else if (0.20<voiceSound<=0.25) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback005"]];
+//    }else if (0.25<voiceSound<=0.30) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback006"]];
+//    }else if (0.30<voiceSound<=0.35) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback007"]];
+//    }else if (0.35<voiceSound<=0.40) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback008"]];
+//    }else if (0.40<voiceSound<=0.45) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback009"]];
+//    }else if (0.45<voiceSound<=0.50) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback010"]];
+//    }else if (0.50<voiceSound<=0.55) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback011"]];
+//    }else if (0.55<voiceSound<=0.60) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback012"]];
+//    }else if (0.60<voiceSound<=0.65) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback013"]];
+//    }else if (0.65<voiceSound<=0.70) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback014"]];
+//    }else if (0.70<voiceSound<=0.75) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback015"]];
+//    }else if (0.75<voiceSound<=0.80) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback016"]];
+//    }else if (0.80<voiceSound<=0.85) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback017"]];
+//    }else if (0.85<voiceSound<=0.90) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback018"]];
+//    }else if (0.90<voiceSound<=0.95) {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback019"]];
+//    }else {
+//        [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback020"]];
+//    }
 }
 #pragma mark -- ZMDeviceManagerDelegate
 - (void)proximitySensorChanged:(BOOL)isCloseToUser
