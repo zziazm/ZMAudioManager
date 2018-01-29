@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D12EB411DAA2CC50023B85A /* ZMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB401DAA2CC50023B85A /* ZMAudioPlayerUtil.m */; };
-		5D12EB441DAB8C3F0023B85A /* ZMDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB431DAB8C3F0023B85A /* ZMDeviceManager.m */; };
+		5D12EB441DAB8C3F0023B85A /* ZMAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12EB431DAB8C3F0023B85A /* ZMAudioManager.m */; };
 		5D4BC5BC1D9A887B007A94A1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5BB1D9A887B007A94A1 /* RootViewController.m */; };
 		5D4BC5C21D9A8BDB007A94A1 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5C11D9A8BDB007A94A1 /* SecondViewController.m */; };
 		5D4BC5C61D9A959D007A94A1 /* ZMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4BC5C51D9A959D007A94A1 /* ZMAudioRecorderUtil.m */; };
@@ -89,8 +89,8 @@
 /* Begin PBXFileReference section */
 		5D12EB3F1DAA2CC50023B85A /* ZMAudioPlayerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAudioPlayerUtil.h; sourceTree = "<group>"; };
 		5D12EB401DAA2CC50023B85A /* ZMAudioPlayerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMAudioPlayerUtil.m; sourceTree = "<group>"; };
-		5D12EB421DAB8C3F0023B85A /* ZMDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMDeviceManager.h; sourceTree = "<group>"; };
-		5D12EB431DAB8C3F0023B85A /* ZMDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMDeviceManager.m; sourceTree = "<group>"; };
+		5D12EB421DAB8C3F0023B85A /* ZMAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAudioManager.h; sourceTree = "<group>"; };
+		5D12EB431DAB8C3F0023B85A /* ZMAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMAudioManager.m; sourceTree = "<group>"; };
 		5D4BC5BA1D9A887B007A94A1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5D4BC5BB1D9A887B007A94A1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5D4BC5C01D9A8BDB007A94A1 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 				5D4BC5C51D9A959D007A94A1 /* ZMAudioRecorderUtil.m */,
 				5D12EB3F1DAA2CC50023B85A /* ZMAudioPlayerUtil.h */,
 				5D12EB401DAA2CC50023B85A /* ZMAudioPlayerUtil.m */,
-				5D12EB421DAB8C3F0023B85A /* ZMDeviceManager.h */,
-				5D12EB431DAB8C3F0023B85A /* ZMDeviceManager.m */,
+				5D12EB421DAB8C3F0023B85A /* ZMAudioManager.h */,
+				5D12EB431DAB8C3F0023B85A /* ZMAudioManager.m */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -511,7 +511,7 @@
 				5D4BC5BC1D9A887B007A94A1 /* RootViewController.m in Sources */,
 				5D4BC5C61D9A959D007A94A1 /* ZMAudioRecorderUtil.m in Sources */,
 				5D4BC5C21D9A8BDB007A94A1 /* SecondViewController.m in Sources */,
-				5D12EB441DAB8C3F0023B85A /* ZMDeviceManager.m in Sources */,
+				5D12EB441DAB8C3F0023B85A /* ZMAudioManager.m in Sources */,
 				5DEF03BC1D73ED800007C8FD /* FirstViewController.m in Sources */,
 				5DEF03B91D73ED800007C8FD /* AppDelegate.m in Sources */,
 				5DEF03F71D74739D0007C8FD /* CustomCell.m in Sources */,

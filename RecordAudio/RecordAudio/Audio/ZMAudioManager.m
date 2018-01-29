@@ -6,7 +6,7 @@
 //  Copyright © 2016年 zm. All rights reserved.
 //
 
-#import "ZMDeviceManager.h"
+#import "ZMAudioManager.h"
 #import "ZMAudioPlayerUtil.h"
 #import "ZMAudioRecorderUtil.h"
 
@@ -16,11 +16,11 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
     ZM_AUDIORECORDER,
 };
 
-@interface ZMDeviceManager()
+@interface ZMAudioManager()
 
 @end
 
-@implementation ZMDeviceManager
+@implementation ZMAudioManager
 {
     // recorder
     NSDate              *_recorderStartDate;
@@ -33,11 +33,11 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
     BOOL _isCloseToUser;
 }
 
-+ (ZMDeviceManager *)shareInstance{
++ (ZMAudioManager *)shareInstance{
     static dispatch_once_t onceToken;
-    static ZMDeviceManager * manager;
+    static ZMAudioManager * manager;
     dispatch_once(&onceToken, ^{
-        manager = [[ZMDeviceManager alloc] init];
+        manager = [[ZMAudioManager alloc] init];
     });
     return manager;
 }
@@ -103,7 +103,7 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
 - (void)startRecordingWithFileName:(NSString *)fileName
                         completion:(void(^)(NSError *error))completion{
     NSError *error = nil;
-    if (![[ZMDeviceManager shareInstance] checkMicrophoneAvailability]) {
+    if (![[ZMAudioManager shareInstance] checkMicrophoneAvailability]) {
         NSLog(@"麦克风不可用");
         return;
     }
@@ -168,7 +168,7 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
     __weak typeof(self) weakSelf = self;
     _recorderEndDate = [NSDate date];
     
-    if([_recorderEndDate timeIntervalSinceDate:_recorderStartDate] < [ZMDeviceManager recordMinDuration]){
+    if([_recorderEndDate timeIntervalSinceDate:_recorderStartDate] < [ZMAudioManager recordMinDuration]){
         if (completion) {
             error = [NSError errorWithDomain:@"Recording time is too short"
                                         code:0
@@ -177,7 +177,7 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
         }
         
         // 如果录音时间较短，延迟1秒停止录音（iOS中，如果快速开始，停止录音，UI上会出现红条,为了防止用户又迅速按下，UI上需要也加一个延迟，长度大于此处的延迟时间，不允许用户循序重新录音。PS:研究了QQ和微信，就这么玩的,聪明）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([ZMDeviceManager recordMinDuration] * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([ZMAudioManager recordMinDuration] * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             ZMAudioRecorderUtil * ru = [ZMAudioRecorderUtil shareInstance];
             [ru stopRecorderWithCompletion:^(NSString *recoredPath) {
                 [weakSelf setupAudioSessionCategory:ZM_DEFAULT isActive:NO];

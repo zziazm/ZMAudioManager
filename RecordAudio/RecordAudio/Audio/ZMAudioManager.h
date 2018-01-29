@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol ZMDeviceManagerDelegate <NSObject>
+@protocol ZMAudioManagerDelegate <NSObject>
 
 - (void)proximitySensorChanged:(BOOL)isCloseToUser;
 
 @end
 
 
-@interface ZMDeviceManager : NSObject
+@interface ZMAudioManager : NSObject
 
-+ (ZMDeviceManager *)shareInstance;
++ (ZMAudioManager *)shareInstance;
 
 #pragma mark - AudioRecorder
 // 开始录音
@@ -48,14 +48,12 @@
 // 停止播放
 - (void)stopPlaying;
 
-//- (void)stopPlayingWithChangeCategory:(BOOL)isChange;
-
 // 当前是否正在播放
 -(BOOL)isPlaying;
 
 #pragma mark - proximity sensor
 
-@property (nonatomic, weak) id<ZMDeviceManagerDelegate>delegate;
+@property (nonatomic, weak) id<ZMAudioManagerDelegate>delegate;
 @property (nonatomic, readonly) BOOL isSupportProximitySensor;//是否支持距离传感器
 @property (nonatomic, readonly) BOOL isCloseToUser;
 @property (nonatomic, readonly) BOOL isProximitySensorEnabled;

@@ -9,10 +9,10 @@
 #import "SecondViewController.h"
 #import "ZMAudioRecorderUtil.h"
 #import "ZMAudioPlayerUtil.h"
-#import "ZMDeviceManager.h"
+#import "ZMAudioManager.h"
 #import "CustomCellModel.h"
 #import "CustomCell.h"
-@interface SecondViewController ()<UITableViewDelegate, UITableViewDataSource, ZMDeviceManagerDelegate>
+@interface SecondViewController ()<UITableViewDelegate, UITableViewDataSource, ZMAudioManagerDelegate>
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSMutableArray * datasource;
 @property (nonatomic, strong) CustomCellModel * previousSelectedModel;
@@ -52,7 +52,7 @@
     [button addTarget:self action:@selector(touchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
     
     _datasource = @[].mutableCopy;
-    [ZMDeviceManager shareInstance].delegate = self;
+    [ZMAudioManager shareInstance].delegate = self;
     // Do any additional setup after loading the view.
 }
 #pragma mark -- UITableViewDataSource
@@ -81,16 +81,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CustomCellModel * model = _datasource[indexPath.row];
-    if ([[ZMDeviceManager shareInstance] isPlaying]) {
+    if ([[ZMAudioManager shareInstance] isPlaying]) {
         if (model == _previousSelectedModel) {//选中的是正在播放的语音
             model.isPlaying = NO;
-            [[ZMDeviceManager shareInstance] stopPlaying];
+            [[ZMAudioManager shareInstance] stopPlaying];
         }
         else{
             _previousSelectedModel.isPlaying = NO;
             model.isPlaying = YES;
             _previousSelectedModel = model;
-            [[ZMDeviceManager shareInstance] stopPlaying];
+            [[ZMAudioManager shareInstance] stopPlaying];
             [self playAudioWithModel:model];
         }
     }
@@ -100,12 +100,13 @@
         [self playAudioWithModel:model];
     }
 }
+
 - (void)playAudioWithModel:(CustomCellModel *)model{
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [self.tableView reloadData];
-    [[ZMDeviceManager shareInstance] enableProximitySensor];
-    [[ZMDeviceManager shareInstance] playAudioWithPath:model.audioPath completion:^(NSError *error) {
-        [[ZMDeviceManager shareInstance] disableProximitySensor];
+    [[ZMAudioManager shareInstance] enableProximitySensor];
+    [[ZMAudioManager shareInstance] playAudioWithPath:model.audioPath completion:^(NSError *error) {
+        [[ZMAudioManager shareInstance] disableProximitySensor];
         _previousSelectedModel.isPlaying = NO;
         [self.tableView reloadData];
 
@@ -115,7 +116,7 @@
 #pragma mark -- Action
 //开始录音
 - (IBAction)touchDown:(id)sender {
-    [[ZMDeviceManager shareInstance] startRecordingWithFileName:[NSString stringWithFormat:@"%f.wav", [[NSDate date] timeIntervalSince1970]] completion:^(NSError *error) {
+    [[ZMAudioManager shareInstance] startRecordingWithFileName:[NSString stringWithFormat:@"%f.wav", [[NSDate date] timeIntervalSince1970]] completion:^(NSError *error) {
         if (error) {
             
         }else{
@@ -126,17 +127,27 @@
 
 - (IBAction)touchUpInside:(id)sender {
     NSLog(@"%s", __func__);
-    [[ZMDeviceManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
-        CustomCellModel * model = [[CustomCellModel alloc] init];
-        model.audioPath = recordPath;
-        [_metesTimer invalidate];
-        _recoredAnimationView.hidden = YES;
-        [_datasource addObject:model];
-        [_tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    [[ZMAudioManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
+        if (error) {
+           UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"error" message:error.domain delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [a show];
+            [_metesTimer invalidate];
+            _recoredAnimationView.hidden = YES;
+            
+        }else{
+            CustomCellModel * model = [[CustomCellModel alloc] init];
+            model.audioPath = recordPath;
+            [_metesTimer invalidate];
+            _recoredAnimationView.hidden = YES;
+            [_datasource addObject:model];
+            [_tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_datasource.count - 1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+        }
     }];
 }
 
 - (IBAction)touchUpOutside:(id)sender {
+    [_metesTimer invalidate];
+    _recoredAnimationView.hidden = YES;
 
 }
 
@@ -162,7 +173,7 @@
 
 - (void)setVoiceImage{
     _recoredAnimationView.hidden = NO;
-    double voiceSound = [[ZMDeviceManager shareInstance] peekRecorderVoiceMeter];
+    double voiceSound = [[ZMAudioManager shareInstance] peekRecorderVoiceMeter];
     if (0 < voiceSound <= 0.05) {
         [_recoredAnimationView setImage:[UIImage imageNamed:@"VoiceSearchFeedback001"]];
     }else if (0.05<voiceSound<=0.10) {
