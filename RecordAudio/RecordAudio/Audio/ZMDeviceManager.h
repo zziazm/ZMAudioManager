@@ -3,7 +3,7 @@
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/10/10.
-//  Copyright © 2016年 ZMiazm. All rights reserved.
+//  Copyright © 2016年 zm. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

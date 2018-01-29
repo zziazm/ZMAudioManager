@@ -3,7 +3,7 @@
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/9/27.
-//  Copyright © 2016年 ZMiazm. All rights reserved.
+//  Copyright © 2016年 zm. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -22,8 +22,6 @@
 +(void)cancelCurrentRecording;
 
 +(AVAudioRecorder *)audioRecorder;
-
-
 
 - (void)startRecoredWithPath:(NSString *)path
                   completion:(void(^)(NSError *error))completion;

@@ -3,7 +3,7 @@
 //  RecordAudio
 //
 //  Created by 赵铭 on 16/9/27.
-//  Copyright © 2016年 ZMiazm. All rights reserved.
+//  Copyright © 2016年 zm. All rights reserved.
 //
 
 #import "SecondViewController.h"
@@ -103,7 +103,9 @@
 - (void)playAudioWithModel:(CustomCellModel *)model{
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [self.tableView reloadData];
+    [[ZMDeviceManager shareInstance] enableProximitySensor];
     [[ZMDeviceManager shareInstance] playAudioWithPath:model.audioPath completion:^(NSError *error) {
+        [[ZMDeviceManager shareInstance] disableProximitySensor];
         _previousSelectedModel.isPlaying = NO;
         [self.tableView reloadData];
 
