@@ -56,11 +56,11 @@
     [ZMAudioManager shareInstance].delegate = self;
     // Do any additional setup after loading the view.
 }
+
 #pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _datasource.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CustomCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -70,6 +70,9 @@
     }
     else{
         [cell.playImageView stopAnimating];
+    }
+    if (model.aDuration > 0) {
+        cell.timeLabel.text = [NSString stringWithFormat:@"录音时长：%ld'", (long)model.aDuration];
     }
     return cell;
 }
@@ -138,6 +141,7 @@
         }else{
             CustomCellModel * model = [[CustomCellModel alloc] init];
             model.audioPath = recordPath;
+            model.aDuration = aDuration;
             [_metesTimer invalidate];
             _recoredAnimationView.hidden = YES;
             [_datasource addObject:model];

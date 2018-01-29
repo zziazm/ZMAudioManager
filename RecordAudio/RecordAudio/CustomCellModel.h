@@ -12,4 +12,5 @@
 @property (nonatomic, copy) NSString * audioPath;
 @property (nonatomic, copy) NSURL * audioURL;
 @property (nonatomic, assign) BOOL isPlaying;
+@property (nonatomic, assign) NSInteger aDuration;
 @end

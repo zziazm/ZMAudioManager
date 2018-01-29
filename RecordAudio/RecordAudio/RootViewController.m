@@ -51,7 +51,7 @@
         cell.textLabel.text = @"demo";
     }
     if (indexPath.row == 1) {
-        cell.textLabel.text = @"demo1";
+        cell.textLabel.text = @"demo1 使用ZMAudioManager";
     }
     return cell;
 }

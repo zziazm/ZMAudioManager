@@ -10,5 +10,6 @@
 
 @interface CustomCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *playImageView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
