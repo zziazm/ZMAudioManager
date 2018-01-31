@@ -15,6 +15,11 @@
 
 @end
 
+typedef NS_ENUM(NSUInteger, ZMAudioRecordeType) {
+    ZMAudioRecordeAMRType,//录制amr
+    ZMAudioRecordeWAVType,//录制wav
+};
+
 
 @interface ZMAudioManager : NSObject
 
@@ -26,9 +31,9 @@
                              completion:(void(^)(NSError *error))completion;
 
 // 停止录音
--(void)stopRecordingWithCompletion:(void(^)(NSString *recordPath,
-                                                 NSInteger aDuration,
-                                                 NSError *error))completion;
+-(void)stopRecordingWithType:(ZMAudioRecordeType)type
+completion:(void(^)(NSString *recordPath,NSInteger aDuration,NSError *error))completion;
+
 // 取消录音
 -(void)cancelCurrentRecording;
 

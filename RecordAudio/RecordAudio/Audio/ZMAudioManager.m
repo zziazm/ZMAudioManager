@@ -9,7 +9,7 @@
 #import "ZMAudioManager.h"
 #import "ZMAudioPlayerUtil.h"
 #import "ZMAudioRecorderUtil.h"
-
+#import "EMVoiceConverter.h"
 typedef NS_ENUM(NSUInteger, ZMAudioSession) {
     ZM_DEFAULT = 0,
     ZM_AUDIOPLAYER,
@@ -64,7 +64,23 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
         [self setupAudioSessionCategory:ZM_AUDIOPLAYER
                                isActive:YES];
     }
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *wavFilePath = [[aFilePath stringByDeletingPathExtension] stringByAppendingPathExtension:@"wav"];
+    if ([EMVoiceConverter isMP3File:aFilePath]) {
+        wavFilePath = aFilePath;
+    } else {
+        if (![fileManager fileExistsAtPath:wavFilePath]) {
+            BOOL covertRet = [self convertAMR:aFilePath toWAV:wavFilePath];
+            if (!covertRet) {//转换失败
+                if (completon) {
+                    completon([NSError errorWithDomain:@"File format conversion failed"
+                                                  code:-101
+                                              userInfo:nil]);
+                }
+                return ;
+            }
+        }
+    }
     //如果转换后的wav文件不存在, 则去转换一下
     [ZMAudioPlayerUtil playAudioWithPath:wavFilePath
                                  completion:^(NSError *error)
@@ -150,9 +166,8 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
 }
 
 // 停止录音
--(void)stopRecordingWithCompletion:(void(^)(NSString *recordPath,
-                                            NSInteger aDuration,
-                                            NSError *error))completion{
+-(void)stopRecordingWithType:(ZMAudioRecordeType)type completion:(void (^)(NSString *, NSInteger, NSError *))completion
+{
     NSError *error = nil;
     // 当前是否在录音
     if(![self isRecording]){
@@ -181,7 +196,7 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
             ZMAudioRecorderUtil * ru = [ZMAudioRecorderUtil shareInstance];
             [ru stopRecorderWithCompletion:^(NSString *recoredPath) {
                 [weakSelf setupAudioSessionCategory:ZM_DEFAULT isActive:NO];
-
+                
             }];
             
         });
@@ -191,13 +206,32 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
     [ru stopRecorderWithCompletion:^(NSString *recoredPath) {
         if (completion) {
             if (recoredPath) {
-                completion(recoredPath,(int)[self->_recorderEndDate timeIntervalSinceDate:self->_recorderStartDate],nil);
+                if (type == ZMAudioRecordeAMRType) {//将wav转换成amr
+                    NSString *amrFilePath = [[recoredPath stringByDeletingPathExtension]
+                                             stringByAppendingPathExtension:@"amr"];
+                    BOOL convertResult = [self convertWAV:recoredPath toAMR:amrFilePath];
+                    NSError *error = nil;
+                    if (convertResult) {
+                        // Remove the wav
+                        NSFileManager *fm = [NSFileManager defaultManager];
+                        [fm removeItemAtPath:recoredPath error:nil];
+                    }
+                    else {
+                        error = [NSError errorWithDomain:@"File format conversion failed"
+                                                    code:-101
+                                                userInfo:nil];
+                    }
+                    completion(amrFilePath,(int)[self->_recorderEndDate timeIntervalSinceDate:self->_recorderStartDate],error);
+                }else{
+                    completion(recoredPath,(int)[self->_recorderEndDate timeIntervalSinceDate:self->_recorderStartDate],nil);
+                }
             }
             [weakSelf setupAudioSessionCategory:ZM_DEFAULT isActive:NO];
         }
-
+        
     }];
 }
+
 // 取消录音
 -(void)cancelCurrentRecording{
     ZMAudioRecorderUtil * ru = [ZMAudioRecorderUtil shareInstance];
@@ -370,6 +404,42 @@ typedef NS_ENUM(NSUInteger, ZMAudioSession) {
 
 - (BOOL)isSupportProximitySensor {
     return _isSupportProximitySensor;
+}
+
+
+#pragma mark - Convert
+
+- (BOOL)convertAMR:(NSString *)amrFilePath
+             toWAV:(NSString *)wavFilePath
+{
+    BOOL ret = NO;
+    BOOL isFileExists = [[NSFileManager defaultManager] fileExistsAtPath:amrFilePath];
+    if (isFileExists) {
+        [EMVoiceConverter amrToWav:amrFilePath wavSavePath:wavFilePath];
+        isFileExists = [[NSFileManager defaultManager] fileExistsAtPath:wavFilePath];
+        if (isFileExists) {
+            ret = YES;
+        }
+    }
+    
+    return ret;
+}
+
+- (BOOL)convertWAV:(NSString *)wavFilePath
+             toAMR:(NSString *)amrFilePath {
+    BOOL ret = NO;
+    BOOL isFileExists = [[NSFileManager defaultManager] fileExistsAtPath:wavFilePath];
+    if (isFileExists) {
+        [EMVoiceConverter wavToAmr:wavFilePath amrSavePath:amrFilePath];
+        isFileExists = [[NSFileManager defaultManager] fileExistsAtPath:amrFilePath];
+        if (!isFileExists) {
+            
+        } else {
+            ret = YES;
+        }
+    }
+    
+    return ret;
 }
 
 - (void)dealloc{

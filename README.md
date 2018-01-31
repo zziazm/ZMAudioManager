@@ -16,7 +16,7 @@
 ```
  [[ZMAudioManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
      if (error) {
-         UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"error" message:error.domain delegate:nil cancelButtonTitle:@"确        定" otherButtonTitles: nil];
+         UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"error" message:error.domain delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
          [a show];
      }else{
  

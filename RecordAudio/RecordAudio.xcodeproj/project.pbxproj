@@ -67,6 +67,11 @@
 		5DFCC03C1D756CD7000B113F /* VoiceSearchFeedback020.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0141D756CD7000B113F /* VoiceSearchFeedback020.png */; };
 		5DFCC03D1D756CD7000B113F /* VoiceSearchFeedback020@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFCC0151D756CD7000B113F /* VoiceSearchFeedback020@2x.png */; };
 		98159795201B039300C9500A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98159794201B039300C9500A /* BaseViewController.m */; };
+		981597A6202021C000C9500A /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98159799202021C000C9500A /* amrFileCodec.mm */; };
+		981597A7202021C000C9500A /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9815979B202021C000C9500A /* wav.mm */; };
+		981597A8202021C000C9500A /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9815979D202021C000C9500A /* EMVoiceConverter.mm */; };
+		981597A9202021C000C9500A /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 981597A1202021C000C9500A /* libopencore-amrnb.a */; };
+		981597AA202021C000C9500A /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 981597A5202021C000C9500A /* libopencore-amrwb.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +168,18 @@
 		5DFCC0151D756CD7000B113F /* VoiceSearchFeedback020@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback020@2x.png"; sourceTree = "<group>"; };
 		98159793201B039300C9500A /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		98159794201B039300C9500A /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		98159798202021C000C9500A /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		98159799202021C000C9500A /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		9815979A202021C000C9500A /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
+		9815979B202021C000C9500A /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
+		9815979C202021C000C9500A /* EMVoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVoiceConverter.h; sourceTree = "<group>"; };
+		9815979D202021C000C9500A /* EMVoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EMVoiceConverter.mm; sourceTree = "<group>"; };
+		9815979F202021C000C9500A /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		981597A0202021C000C9500A /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		981597A1202021C000C9500A /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		981597A3202021C000C9500A /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		981597A4202021C000C9500A /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
+		981597A5202021C000C9500A /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +187,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981597AA202021C000C9500A /* libopencore-amrwb.a in Frameworks */,
+				981597A9202021C000C9500A /* libopencore-amrnb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +262,7 @@
 		5D4BC5C31D9A9559007A94A1 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				98159796202021C000C9500A /* VoiceConvert */,
 				5D4BC5C41D9A959D007A94A1 /* ZMAudioRecorderUtil.h */,
 				5D4BC5C51D9A959D007A94A1 /* ZMAudioRecorderUtil.m */,
 				5D12EB3F1DAA2CC50023B85A /* ZMAudioPlayerUtil.h */,
@@ -326,6 +346,49 @@
 				5DEF03DB1D73ED800007C8FD /* Info.plist */,
 			);
 			path = RecordAudioUITests;
+			sourceTree = "<group>";
+		};
+		98159796202021C000C9500A /* VoiceConvert */ = {
+			isa = PBXGroup;
+			children = (
+				98159797202021C000C9500A /* amrwapper */,
+				9815979C202021C000C9500A /* EMVoiceConverter.h */,
+				9815979D202021C000C9500A /* EMVoiceConverter.mm */,
+				9815979E202021C000C9500A /* opencore-amrnb */,
+				981597A2202021C000C9500A /* opencore-amrwb */,
+			);
+			path = VoiceConvert;
+			sourceTree = "<group>";
+		};
+		98159797202021C000C9500A /* amrwapper */ = {
+			isa = PBXGroup;
+			children = (
+				98159798202021C000C9500A /* amrFileCodec.h */,
+				98159799202021C000C9500A /* amrFileCodec.mm */,
+				9815979A202021C000C9500A /* wav.h */,
+				9815979B202021C000C9500A /* wav.mm */,
+			);
+			path = amrwapper;
+			sourceTree = "<group>";
+		};
+		9815979E202021C000C9500A /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				9815979F202021C000C9500A /* interf_dec.h */,
+				981597A0202021C000C9500A /* interf_enc.h */,
+				981597A1202021C000C9500A /* libopencore-amrnb.a */,
+			);
+			path = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		981597A2202021C000C9500A /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				981597A3202021C000C9500A /* dec_if.h */,
+				981597A4202021C000C9500A /* if_rom.h */,
+				981597A5202021C000C9500A /* libopencore-amrwb.a */,
+			);
+			path = "opencore-amrwb";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,15 +568,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981597A7202021C000C9500A /* wav.mm in Sources */,
 				5D12EB411DAA2CC50023B85A /* ZMAudioPlayerUtil.m in Sources */,
 				5DEF03FB1D7475B20007C8FD /* CustomCellModel.m in Sources */,
 				98159795201B039300C9500A /* BaseViewController.m in Sources */,
 				5D4BC5BC1D9A887B007A94A1 /* RootViewController.m in Sources */,
 				5D4BC5C61D9A959D007A94A1 /* ZMAudioRecorderUtil.m in Sources */,
 				5D4BC5C21D9A8BDB007A94A1 /* SecondViewController.m in Sources */,
+				981597A8202021C000C9500A /* EMVoiceConverter.mm in Sources */,
 				5D12EB441DAB8C3F0023B85A /* ZMAudioManager.m in Sources */,
 				5DEF03BC1D73ED800007C8FD /* FirstViewController.m in Sources */,
 				5DEF03B91D73ED800007C8FD /* AppDelegate.m in Sources */,
+				981597A6202021C000C9500A /* amrFileCodec.mm in Sources */,
 				5DEF03F71D74739D0007C8FD /* CustomCell.m in Sources */,
 				5DEF03B61D73ED800007C8FD /* main.m in Sources */,
 			);
@@ -653,6 +719,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RecordAudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RecordAudio/Audio/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/RecordAudio/Audio/VoiceConvert/opencore-amrwb",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = zm.RecordAudio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -665,6 +736,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RecordAudio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RecordAudio/Audio/VoiceConvert/opencore-amrnb",
+					"$(PROJECT_DIR)/RecordAudio/Audio/VoiceConvert/opencore-amrwb",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = zm.RecordAudio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

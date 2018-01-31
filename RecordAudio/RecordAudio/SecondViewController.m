@@ -131,9 +131,9 @@
 
 - (IBAction)touchUpInside:(id)sender {
     NSLog(@"%s", __func__);
-    [[ZMAudioManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
+    [[ZMAudioManager  shareInstance] stopRecordingWithType:ZMAudioRecordeWAVType completion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
         if (error) {
-           UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"error" message:error.domain delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"error" message:error.domain delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [a show];
             [_metesTimer invalidate];
             _recoredAnimationView.hidden = YES;
