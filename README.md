@@ -14,7 +14,7 @@
  
  停止录音,recordPath是录音文件存放的路径，aDuration是录音时长
 ```
- [[ZMAudioManager  shareInstance] stopRecordingWithType:ZMAudioRecordeWAVType completion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
+ [[ZMAudioManager  shareInstance] stopRecordingWithType:ZMAudioRecordeAMRType completion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
         if (error) {
             UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"error" message:error.domain delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
             [a show];
