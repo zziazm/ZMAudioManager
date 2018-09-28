@@ -1,4 +1,5 @@
-# TestAudioDemo
+# ZMAudioManager
+封装了录音和播放。
 
 开始录音
 
